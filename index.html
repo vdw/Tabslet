@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tabs jquery plugin | Yet another tabs plugin</title>
+	<meta name="description" content="">
+
+	<!-- STYLES -->
+	<link rel="stylesheet" type="text/css" href="styles/reset.css">
+	<link rel="stylesheet" type="text/css" href="styles/typography.css">
+
+</head>
+<!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <body class="ie ie8 lte9 lte8">      <![endif]-->
+<!--[if IE 9]>     <body class="ie ie9 lte9">           <![endif]-->
+<!--[if gt IE 9]>  <body class="ie">                    <![endif]-->
+<!--[if !IE]><!--> <body>                               <!--<![endif]-->
+
+<div id="wrapper">
+
+	<!-- HEADER -->
+	<header>
+		<nav>
+			<ul>
+				<li><h1>Tabslet - a tabs jQuery plugin with some useful options</h1></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- HEADER ends -->
+
+	<!-- MAIN CONTAINER -->
+	<div id="body_wrapper">
+
+		<!-- SIDE BAR -->
+		<aside></aside>
+		<!-- SIDE BAR ends -->
+
+		<!-- CONTENT -->
+		<section id="body" role="main">
+
+			<!-- CONTENT BLOCK -->
+			<article>
+				<div class='tabs'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Tab 1</a></li>
+						<li><a href="#tab-2">Tab 2</a></li>
+						<li><a href="#tab-3">Tab 3</a></li>
+					</ul>
+					<div id='tab-1'>Tab #1<br /><img src="http://placedog.com/g/200/300"></div>
+					<div id='tab-2'>Tab #2<br /><img src="http://placedog.com/g/400/300"></div>
+					<div id='tab-3'>Tab #3<br /><img src="http://placedog.com/g/300/200"></div>
+				</div>
+			</article>
+			<!-- CONTENT BLOCK ends -->
+
+		</section>
+		<!-- CONTENT ends-->
+
+	</div>
+	<!-- MAIN CONTAINER ends -->
+
+	<!-- FOOTER -->
+	<footer>
+		<!-- FOOTER CONTAINER-->
+		<div class="footer_wrapper"></div>
+		<!-- FOOTER CONTAINER ends -->
+
+		<!-- SUBFOOTER CONTAINER -->
+		<div class="sub_footer_wrapper">
+			<div class="credits"><a href="#"></a></div>
+		</div>
+		<!-- SUBFOOTER CONTAINER ends -->
+	</footer>
+
+</div>
+
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.1.min.js"><\/script>')</script>
+
+	<!-- JS -->
+	<script src="js/vendor/jquery.tabs.js"></script>
+	<script src="js/initializers.js"></script>
+	<!-- JS ends -->
+
+</body>
+</html>
