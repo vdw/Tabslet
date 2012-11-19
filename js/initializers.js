@@ -1,9 +1,17 @@
 // Run javascript after DOM is initialized
 $(document).ready(function() {
 
-	$('.tabs').tabslet({
+	$('.tabs_default').tabslet();
+
+	$('.tabs_hover').tabslet({
+		mouseevent: 'hover',
+		attribute: 'href',
+		animation: false
+	});
+
+	$('.tabs_animate').tabslet({
 		mouseevent: 'click',
-		attribute: 'alt',
+		attribute: 'href',
 		animation: true
 	});
 

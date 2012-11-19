@@ -8,6 +8,7 @@
 	<!-- STYLES -->
 	<link rel="stylesheet" type="text/css" href="styles/reset.css">
 	<link rel="stylesheet" type="text/css" href="styles/typography.css">
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 
 </head>
 <!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
@@ -21,11 +22,7 @@
 
 	<!-- HEADER -->
 	<header>
-		<nav>
-			<ul>
-				<li><h1>Tabslet - a tabs jQuery plugin with some useful options</h1></li>
-			</ul>
-		</nav>
+		<h1>Tabslet - a jQuery plugin for tabs</h1>
 	</header>
 	<!-- HEADER ends -->
 
@@ -41,15 +38,61 @@
 
 			<!-- CONTENT BLOCK -->
 			<article>
-				<div class='tabs'>
+				<h2>Default</h2>
+				<p>
+					<code>
+						$('.tabs').tabslet();
+					</code>
+				</p>
+				<div class='tabs tabs_default'>
 					<ul class='horizontal'>
 						<li><a href="#tab-1">Tab 1</a></li>
 						<li><a href="#tab-2">Tab 2</a></li>
 						<li><a href="#tab-3">Tab 3</a></li>
 					</ul>
-					<div id='tab-1'>Tab #1<br /><img src="http://placedog.com/g/200/300"></div>
-					<div id='tab-2'>Tab #2<br /><img src="http://placedog.com/g/400/300"></div>
-					<div id='tab-3'>Tab #3<br /><img src="http://placedog.com/g/300/200"></div>
+					<div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+					<div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+					<div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+				</div>
+				<h2>Hover</h2>
+				<p>
+					<code>
+						$('.tabs').tabslet({
+							mouseevent: 'hover',
+							attribute: 'href',
+							animation: false
+						});
+					</code>
+				</p>
+				<div class='tabs tabs_hover'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Tab 1</a></li>
+						<li><a href="#tab-2">Tab 2</a></li>
+						<li><a href="#tab-3">Tab 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+					<div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+					<div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+				</div>
+				<h2>Animation</h2>
+				<p>
+					<code>
+						$('.tabs').tabslet({
+							mouseevent: 'click',
+							attribute: 'href',
+							animation: true
+						});
+					</code>
+				</p>
+				<div class='tabs tabs_animate'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Tab 1</a></li>
+						<li><a href="#tab-2">Tab 2</a></li>
+						<li><a href="#tab-3">Tab 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+					<div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+					<div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
 				</div>
 			</article>
 			<!-- CONTENT BLOCK ends -->

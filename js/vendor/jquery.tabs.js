@@ -29,7 +29,7 @@
 		var defaults = {
 			mouseevent: 'click',
 			attribute: 'href',
-			animation: true
+			animation: false
 		};
 
 		var options = $.extend(defaults, options)
