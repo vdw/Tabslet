@@ -29,7 +29,9 @@
 		var defaults = {
 			mouseevent: 'click',
 			attribute: 'href',
-			animation: false
+			animation: false,
+			autorotate: false,
+			delay: 6000
 		};
 
 		var options = $.extend(defaults, options)
@@ -71,6 +73,29 @@
 			var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)")
 
 			init
+
+			// Autorotate
+			var elements = $this.find('> ul li'), i = 0
+
+			function next() {
+
+				i = ++i % elements.length // wrap around
+
+				options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click()
+
+				var t = setTimeout(next, options.delay)
+
+				$this.mouseover(function () {
+					clearTimeout(t)
+				})
+
+			}
+
+			if (options.autorotate) {
+
+				setTimeout(next, 0)
+
+			}
 
 		})
 
