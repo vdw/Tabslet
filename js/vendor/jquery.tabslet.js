@@ -56,11 +56,14 @@
 
 					if (options.animation) {
 
-						$this.find(currentTab).animate( { opacity: 'show' }, 'slow' )
+						$this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
+							$this.find('ul li a').trigger('tblt:loaded')
+						});
 
 					} else {
 
 						$this.find(currentTab).show()
+						$this.find('ul li a').trigger('tblt:loaded')
 
 					}
 
