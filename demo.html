@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tabslet by vdw</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/tabslet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tabslet</h1>
+        <p>Yet another jQuery plugin for tabs</p>
+
+        <p class="view"><a href="https://github.com/vdw/Tabslet">View the Project on GitHub <small>vdw/Tabslet</small></a></p>
+
+        <ul>
+          <li><a href="https://github.com/vdw/Tabslet/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/vdw/Tabslet/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/vdw/Tabslet">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Examples</h1>
+        <p><a href="https://github.com/vdw/Tabslet">back to home</a></p>
+        <h2>Default</h2>
+        <p>
+          <code>
+            $('.tabs').tabslet();
+          </code>
+        </p>
+        <div class='tabs tabs_default'>
+          <ul class='horizontal'>
+            <li><a href="#tab-1">Tab 1</a></li>
+            <li><a href="#tab-2">Tab 2</a></li>
+            <li><a href="#tab-3">Tab 3</a></li>
+          </ul>
+          <div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          <div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+          <div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+        </div>
+        <h2>Hover</h2>
+        <p>
+          <code>
+            $('.tabs').tabslet({
+              mouseevent: 'hover',
+              attribute: 'href',
+              animation: false
+            });
+          </code>
+        </p>
+        <div class='tabs tabs_hover'>
+          <ul class='horizontal'>
+            <li><a href="#tab-1">Tab 1</a></li>
+            <li><a href="#tab-2">Tab 2</a></li>
+            <li><a href="#tab-3">Tab 3</a></li>
+          </ul>
+          <div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          <div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+          <div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+        </div>
+        <h2>Animation</h2>
+        <p>
+          <code>
+            $('.tabs').tabslet({
+              mouseevent: 'click',
+              attribute: 'href',
+              animation: true
+            });
+          </code>
+        </p>
+        <div class='tabs tabs_animate'>
+          <ul class='horizontal'>
+            <li><a href="#tab-1">Tab 1</a></li>
+            <li><a href="#tab-2">Tab 2</a></li>
+            <li><a href="#tab-3">Tab 3</a></li>
+          </ul>
+          <div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          <div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
+          <div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+        </div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/vdw">vdw</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="javascripts/jquery.tabslet.js"></script>
+
+    <script>
+    $(document).ready(function() {
+
+      $('.tabs_default').tabslet();
+
+      $('.tabs_hover').tabslet({
+        mouseevent: 'hover',
+        attribute: 'href',
+        animation: false
+      });
+
+      $('.tabs_animate').tabslet({
+        mouseevent: 'click',
+        attribute: 'href',
+        animation: true
+      });
+
+    });
+    </script>
+
+  </body>
+</html>
