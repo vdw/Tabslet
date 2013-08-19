@@ -2,7 +2,7 @@
 
 Yet another jQuery plugin for tabs
 
-[Check out the demo][1]
+[For more information and demostration][1]
 
 ## Features
 
@@ -29,5 +29,5 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-  [1]: https://dl.dropbox.com/u/28039153/tabslet/index.html
+  [1]: http://vdw.github.io/Tabslet/
   [2]: http://www.apache.org/licenses/LICENSE-2.0
