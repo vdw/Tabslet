@@ -1,8 +1,17 @@
 # Tabslet
 
-## Yet another jQuery plugin for tabs
+Yet another jQuery plugin for tabs
 
 [Check out the demo][1]
+
+## Features
+
+Beyond the standard tabs functionality:
+
+* Change tabs on mouse over
+* Use animation effect for tabs' changing
+* Ability to use either href or alt attribute to target tab
+* Support of trigger events
 
 ## Copyright and license
 
