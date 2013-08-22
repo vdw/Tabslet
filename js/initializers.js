@@ -15,4 +15,8 @@ $(document).ready(function() {
 		animation: true
 	});
 
+	$('.tabs_rotate').tabslet({
+		autorotate: true,
+		delay: 6000
+	});
 });
