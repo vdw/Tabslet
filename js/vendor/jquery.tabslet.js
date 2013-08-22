@@ -22,7 +22,8 @@
 
 	*/
 
-(function($) {
+;(function($, window, undefined) {
+	"use strict";
 
 	$.fn.tabslet = function(options) {
 
@@ -34,76 +35,76 @@
 			delay: 6000
 		};
 
-		var options = $.extend(defaults, options)
+		var options = $.extend(defaults, options);
 
 		$(this).each(function() {
 
 			var $this = $(this);
 
-			$this.find('> div').hide()
-			$this.find('> div:first').show()
-			$this.find('> ul li:first').addClass('active')
+			$this.find('> div').hide();
+			$this.find('> div:first').show();
+			$this.find('> ul li:first').addClass('active');
 
 			var fn = eval(
 
 				function() {
 
-					$this.find('> ul li').removeClass('active')
-					$(this).addClass('active')
-					$this.find('> div').hide()
+					$this.find('> ul li').removeClass('active');
+					$(this).addClass('active');
+					$this.find('> div').hide();
 
-					var currentTab = $(this).find('a').attr(options.attribute)
+					var currentTab = $(this).find('a').attr(options.attribute);
 
 					if (options.animation) {
 
 						$this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
-							$this.find('ul li a').trigger('tblt:loaded')
+							$this.find('ul li a').trigger('tblt:loaded');
 						});
 
 					} else {
 
-						$this.find(currentTab).show()
-						$this.find('ul li a').trigger('tblt:loaded')
+						$this.find(currentTab).show();
+						$this.find('ul li a').trigger('tblt:loaded');
 
 					}
 
-					return false
+					return false;
 
 				}
 
-			)
+			);
 
-			var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)")
+			var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)");
 
-			init
+			init;
 
 			// Autorotate
-			var elements = $this.find('> ul li'), i = 0
+			var elements = $this.find('> ul li'), i = 0;
 
 			function next() {
 
-				i = ++i % elements.length // wrap around
+				i = ++i % elements.length; // wrap around
 
-				options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click()
+				options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
 
-				var t = setTimeout(next, options.delay)
+				var t = setTimeout(next, options.delay);
 
 				$this.mouseover(function () {
-					clearTimeout(t)
-				})
+					clearTimeout(t);
+				});
 
 			}
 
 			if (options.autorotate) {
 
-				setTimeout(next, 0)
+				setTimeout(next, 0);
 
 			}
 
-		})
+		});
 
-	}
+	};
 
-	$(document).ready(function () { $('[data-toggle="tabslet"]').tabslet() })
+	$(document).ready(function () { $('[data-toggle="tabslet"]').tabslet(); });
 
 })(jQuery);
