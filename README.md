@@ -1,6 +1,6 @@
 # Tabslet
 
-Yet another jQuery plugin for tabs
+Yet another jQuery plugin for tabs with some extra features
 
 [For more information and demostration][1]
 
