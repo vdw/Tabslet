@@ -14,6 +14,11 @@ Beyond the standard tabs functionality:
 * Rotation
 * Support of trigger events
 
+## Compatibility
+
+Compatible with IE7+, Chrome, Firefox, Safari
+and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2.
+
 ## Copyright and license
 
 Copyright 2012 Dimitris Krestos
