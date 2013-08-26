@@ -16,16 +16,19 @@
  * -------------------------------------------------------------------------------------------------
  */
 BODY {
+
 	font-size: 13px; /* Override typography */
+	font-family: 'Lato', sans-serif;
 }
 
 #wrapper {
-	margin: 0 auto;
-	max-width: 960px;
+	/*margin: 0 auto;*/
+	/*max-width: 960px;*/
+	width: 100%;
 }
 
 H2 {
-	margin-top: 1.5em;
+	font-weight: 300;
 }
 
 /**
@@ -33,19 +36,91 @@ H2 {
  * Your header rules
  * -------------------------------------------------------------------------------------------------
  */
-HEADER {}
+.top_bar {
+	background: white;
+	border-bottom: 1px solid #E5E5E5;
+	color: #888;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 80px;
+	letter-spacing: 2px;
+	width: 100%;
+}
+
+#header_wrapper {
+	background: #5B5F70;
+	width: 100%;
+}
+
+HEADER {
+	color: white;
+	height: 400px;
+	margin: 0 auto;
+	max-width: 940px;
+}
+
+HEADER H1 {
+	color: inherit;
+	font-size: 47px;
+	font-weight: 700;
+	padding-top: 110px;
+}
+
+HEADER H2 {
+	color: inherit;
+	font-size: 24px;
+}
 
 /**
  * BODY
  * Your content rules
  * -------------------------------------------------------------------------------------------------
  */
-SECTION#body {
-	float: left;
+#body_wrapper {
+	background: white;
 	width: 100%;
 }
 
-ARTICLE {}
+#body_wrapper H3 {
+	background: white;
+	border-bottom: 1px solid #E5E5E5;
+	color: #888;
+	font-size: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 80px;
+	letter-spacing: 2px;
+	width: 100%;
+}
+
+SECTION#body {
+	background: #F1F1F1;
+	/*margin-top: 80px;*/
+	width: 100%;
+}
+
+ARTICLE {
+	margin: 0 auto;
+	padding: 40px 0;
+	max-width: 940px;
+}
+
+/**
+ * FOOTER
+ *
+ * -------------------------------------------------------------------------------------------------
+ */
+FOOTER {
+	width: 100%
+}
+
+.footer_wrapper {
+	color: #888;
+	margin: 20px auto;
+	width: 940px;
+}
 
 /**
  * TABS
@@ -53,14 +128,83 @@ ARTICLE {}
  * -------------------------------------------------------------------------------------------------
  */
 .tabs > DIV {
-	border-top: 1px solid #c7c7c7
+	/*border-top: 1px solid #c7c7c7*/
+	margin-top: 15px;
+	background: #F17C71 !important;
+	border-bottom: 4px solid #E95855 !important;
+}
+
+.tabs > DIV H3 {
+	border-bottom: 4px solid #E5E5E5 !important;
+	line-height: 186px !important;
+}
+
+.tabs LI {
+	background: white;
+	border-bottom: 4px solid #E5E5E5;
+	margin-right: 15px;
+}
+
+.tabs A {
+	color: #888;
+	display: block;
+	font-size: 11px;
+	padding: 14px 20px;
+	text-decoration: none;
+}
+
+.tabs LI:hover {
+	background: #F17C71;
+	border-bottom: 4px solid #E95855;
+}
+
+.tabs LI:hover A {
+	color: white;
 }
 
 .active {
-	background: #c7c7c7;
+	background: #F17C71 !important;
+	border-bottom: 4px solid #E95855 !important;
 }
 
 .active A {
+	color: white !important;
+}
+
+.button {
+	background: #a0cac0;
+	border-bottom: 4px solid #68a697;
+	color: #FFFFFF;
 	display: block;
-	padding: 4px 10px;
+	float: left;
+	font-size: 14px;
+	margin-top: 20px;
+	margin-right: 22px;
+	padding: 15px 20px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 150px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+.button:hover {
+	background: #93b7ae;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.link {
+	color: white;
+	display: block;
+	float: left;
+	line-height: 48px;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
 }

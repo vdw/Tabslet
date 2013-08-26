@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Tabs jquery plugin | Yet another tabs plugin</title>
-	<meta name="description" content="">
+	<title>Tabslet jquery plugin | Yet another tabs plugin</title>
+	<meta name="description" content="Yet another tabs plugin">
 
 	<!-- STYLES -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/typography.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-
+	<link rel="stylesheet" type="text/css" href="stylesheets/github.css">
 </head>
 <!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
 <!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
@@ -20,98 +21,108 @@
 
 <div id="wrapper">
 
+	<div class="top_bar">
+		Tabslet
+	</div>
 	<!-- HEADER -->
-	<header>
-		<h1>Tabslet - a jQuery plugin for tabs</h1>
-	</header>
+	<div id="header_wrapper">
+		<header>
+			<h1>Tabslet</h1>
+			<h2>A jQuery plugin for tabs</h2>
+			<a class="button" href="https://github.com/vdw/Tabslet/archive/master.zip">download</a>
+			<a class="link" href="https://github.com/vdw/Tabslet">or view on GitHub</a>
+		</header>
+	</div>
 	<!-- HEADER ends -->
 
 	<!-- MAIN CONTAINER -->
 	<div id="body_wrapper">
 
-		<!-- SIDE BAR -->
-		<aside></aside>
-		<!-- SIDE BAR ends -->
-
+		<h3>Demostration</h3>
 		<!-- CONTENT -->
 		<section id="body" role="main">
-
 			<!-- CONTENT BLOCK -->
 			<article>
 				<h2>Default</h2>
 				<p>
-					<code>
-						$('.tabs').tabslet();
-					</code>
+<pre data-language="javascript">
+$('.tabs').tabslet();
+</pre>
 				</p>
 				<div class='tabs tabs_default'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Tab 1</a></li>
-						<li><a href="#tab-2">Tab 2</a></li>
-						<li><a href="#tab-3">Tab 3</a></li>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
 					</ul>
-					<div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-					<div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
-					<div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+					<div id='tab-1'><h3>This is the default tab functionality.</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
 				</div>
+			</article>
+			<article>
 				<h2>Hover</h2>
 				<p>
-					<code>
-						$('.tabs').tabslet({
-							mouseevent: 'hover',
-							attribute: 'href',
-							animation: false
-						});
-					</code>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+	mouseevent: 'hover',
+	attribute: 'href',
+	animation: false
+});
+</pre>
 				</p>
 				<div class='tabs tabs_hover'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Tab 1</a></li>
-						<li><a href="#tab-2">Tab 2</a></li>
-						<li><a href="#tab-3">Tab 3</a></li>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
 					</ul>
-					<div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-					<div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
-					<div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+					<div id='tab-1'><h3>Tabs change on mouse over...</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
 				</div>
+			</article>
+			<article>
 				<h2>Animation</h2>
 				<p>
-					<code>
-						$('.tabs').tabslet({
-							mouseevent: 'click',
-							attribute: 'href',
-							animation: true
-						});
-					</code>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+	mouseevent: 'click',
+	attribute: 'href',
+	animation: true
+});
+</pre>
 				</p>
 				<div class='tabs tabs_animate'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Tab 1</a></li>
-						<li><a href="#tab-2">Tab 2</a></li>
-						<li><a href="#tab-3">Tab 3</a></li>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
 					</ul>
-					<div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-					<div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
-					<div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+					<div id='tab-1'><h3>Change the tab to see that there is an animation.</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
 				</div>
+			</article>
+			<article>
 				<h2>Rotation</h2>
 				<p>
-					<code>
-						$('.tabs').tabslet({
-							autorotate: true,
-							delay: 6000
-						});
-					</code>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+	autorotate: true,
+	delay: 6000
+});
+</pre>
 				</p>
 				<div class='tabs tabs_rotate'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Tab 1</a></li>
-						<li><a href="#tab-2">Tab 2</a></li>
-						<li><a href="#tab-3">Tab 3</a></li>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
 					</ul>
-					<div id='tab-1'><h3>Tab #1</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-					<div id='tab-2'><h3>Tab #2</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>
-					<div id='tab-3'><h3>Tab #3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+					<div id='tab-1'><h3>It's alive!</h3></div>
+					<div id='tab-2'><h3>It's alive!!</h3></div>
+					<div id='tab-3'><h3>It's alive!!!</h3></div>
 				</div>
 			</article>
 			<!-- CONTENT BLOCK ends -->
@@ -125,14 +136,11 @@
 	<!-- FOOTER -->
 	<footer>
 		<!-- FOOTER CONTAINER-->
-		<div class="footer_wrapper"></div>
-		<!-- FOOTER CONTAINER ends -->
-
-		<!-- SUBFOOTER CONTAINER -->
-		<div class="sub_footer_wrapper">
-			<div class="credits"><a href="#"></a></div>
+		<div class="footer_wrapper">
+			<p>Built by Dimitris Krestos<br />
+			Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
 		</div>
-		<!-- SUBFOOTER CONTAINER ends -->
+		<!-- FOOTER CONTAINER ends -->
 	</footer>
 
 </div>
@@ -142,7 +150,8 @@
 	<script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.1.min.js"><\/script>')</script>
 
 	<!-- JS -->
-	<script src="javascripts/vendor/jquery.tabslet.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/jquery.tabslet.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/rainbow-custom.min.js"></script>
 	<script src="javascripts/initializers.js"></script>
 	<!-- JS ends -->
 
