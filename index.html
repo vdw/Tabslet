@@ -1,73 +1,159 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Tabslet by vdw</title>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tabslet jquery plugin | Yet another tabs plugin</title>
+	<meta name="description" content="Yet another tabs plugin">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Tabslet</h1>
-        <p>Yet another jQuery plugin for tabs</p>
+	<!-- STYLES -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/typography.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/github.css">
+</head>
+<!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <body class="ie ie8 lte9 lte8">      <![endif]-->
+<!--[if IE 9]>     <body class="ie ie9 lte9">           <![endif]-->
+<!--[if gt IE 9]>  <body class="ie">                    <![endif]-->
+<!--[if !IE]><!--> <body>                               <!--<![endif]-->
 
-        <p class="view"><a href="https://github.com/vdw/Tabslet">View the Project on GitHub <small>vdw/Tabslet</small></a></p>
+<div id="wrapper">
 
+	<div class="top_bar">
+		Tabslet
+	</div>
+	<!-- HEADER -->
+	<div id="header_wrapper">
+		<header>
+			<h1>Tabslet</h1>
+			<h2>A jQuery plugin for tabs</h2>
+			<a class="button" href="https://github.com/vdw/Tabslet/archive/master.zip">download</a>
+			<a class="link" href="https://github.com/vdw/Tabslet">or view on GitHub</a>
+		</header>
+	</div>
+	<!-- HEADER ends -->
 
-        <ul>
-          <li><a href="https://github.com/vdw/Tabslet/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/vdw/Tabslet/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/vdw/Tabslet">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="tabslet" class="anchor" href="#tabslet"><span class="octicon octicon-link"></span></a>Tabslet</h1>
+	<!-- MAIN CONTAINER -->
+	<div id="body_wrapper">
 
-<p>Yet another jQuery plugin for tabs</p>
+		<h3>Demostration</h3>
+		<!-- CONTENT -->
+		<section id="body" role="main">
+			<!-- CONTENT BLOCK -->
+			<article>
+				<h2>Default</h2>
+				<p>
+<pre data-language="javascript">
+$('.tabs').tabslet();
+</pre>
+				</p>
+				<div class='tabs tabs_default'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>This is the default tab functionality.</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
+				</div>
+			</article>
+			<article>
+				<h2>Hover</h2>
+				<p>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+	mouseevent: 'hover',
+	attribute: 'href',
+	animation: false
+});
+</pre>
+				</p>
+				<div class='tabs tabs_hover'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>Tabs change on mouse over...</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
+				</div>
+			</article>
+			<article>
+				<h2>Animation</h2>
+				<p>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+	mouseevent: 'click',
+	attribute: 'href',
+	animation: true
+});
+</pre>
+				</p>
+				<div class='tabs tabs_animate'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>Change the tab to see that there is an animation.</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
+				</div>
+			</article>
+			<article>
+				<h2>Rotation</h2>
+				<p>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+	autorotate: true,
+	delay: 6000
+});
+</pre>
+				</p>
+				<div class='tabs tabs_rotate'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>It's alive!</h3></div>
+					<div id='tab-2'><h3>It's alive!!</h3></div>
+					<div id='tab-3'><h3>It's alive!!!</h3></div>
+				</div>
+			</article>
+			<!-- CONTENT BLOCK ends -->
 
-<p><a href="http://vdw.github.io/Tabslet/demo.html">Check out the demo</a></p>
+		</section>
+		<!-- CONTENT ends-->
 
-<h2>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+	</div>
+	<!-- MAIN CONTAINER ends -->
 
-<p>Beyond the standard tabs functionality:</p>
+	<!-- FOOTER -->
+	<footer>
+		<!-- FOOTER CONTAINER-->
+		<div class="footer_wrapper">
+			<p>Built by Dimitris Krestos<br />
+			Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
+		</div>
+		<!-- FOOTER CONTAINER ends -->
+	</footer>
 
-<ul>
-<li>Change tabs on mouse over</li>
-<li>Use animation effect for tabs' changing</li>
-<li>Ability to use either href or alt attribute to target tab</li>
-<li>Support of trigger events</li>
-</ul><h2>
-<a name="copyright-and-license" class="anchor" href="#copyright-and-license"><span class="octicon octicon-link"></span></a>Copyright and license</h2>
+</div>
 
-<p>Copyright 2012 Dimitris Krestos</p>
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.1.min.js"><\/script>')</script>
 
-<p>Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at</p>
+	<!-- JS -->
+	<script type="text/javascript" src="javascripts/vendor/jquery.tabslet.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/rainbow-custom.min.js"></script>
+	<script src="javascripts/initializers.js"></script>
+	<!-- JS ends -->
 
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-
-<p>Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/vdw">vdw</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-
-  </body>
+</body>
 </html>
