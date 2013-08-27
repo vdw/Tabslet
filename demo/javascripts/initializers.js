@@ -19,4 +19,17 @@ $(document).ready(function() {
 		autorotate: true,
 		delay: 6000
 	});
+
+	$('.before_event').tabslet();
+	$('.before_event').on("_before", function() {
+		alert('This alert comes before the tab change!')
+	});
+
+	$('.after_event').tabslet({
+		animation: true
+	});
+	$('.after_event').on("_after", function() {
+		alert('This alert comes after the tab change!')
+	});
+
 });
