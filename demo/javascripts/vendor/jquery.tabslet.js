@@ -49,6 +49,8 @@
 
 				function() {
 
+					$(this).trigger('_before');
+
 					$this.find('> ul li').removeClass('active');
 					$(this).addClass('active');
 					$this.find('> div').hide();
@@ -58,13 +60,13 @@
 					if (options.animation) {
 
 						$this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
-							$this.find('ul li a').trigger('tblt:loaded');
+							$(this).trigger('_after');
 						});
 
 					} else {
 
 						$this.find(currentTab).show();
-						$this.find('ul li a').trigger('tblt:loaded');
+						$(this).trigger('_after');
 
 					}
 
