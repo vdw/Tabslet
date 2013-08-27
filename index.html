@@ -129,7 +129,54 @@ $('.tabs').tabslet({
 
 		</section>
 		<!-- CONTENT ends-->
-
+		<h3>Custom Events</h3>
+		<section>
+			<!-- CONTENT BLOCK -->
+			<article>
+				<h2>Custom event "before"</h2>
+				<p>
+<pre data-language="javascript">
+$('.before_event').tabslet();
+$('.before_event').on("_before", function() {
+	// do stuff here
+});
+</pre>
+				</p>
+				<div class='tabs before_event'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>An alert message before the tab change...</h3></div>
+					<div id='tab-2'><h3>TAB 2</h3></div>
+					<div id='tab-3'><h3>TAB 3</h3></div>
+				</div>
+			</article>
+			<article>
+				<h2>Custom event "after"</h2>
+				<p>
+<pre data-language="javascript">
+$('.after_event').tabslet({
+	animation: true
+});
+$('.after_event').on("_after", function() {
+	// do stuff here
+});
+</pre>
+				</p>
+				<div class='tabs after_event'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">Information</a></li>
+						<li><a href="#tab-2">TAB 2</a></li>
+						<li><a href="#tab-3">TAB 3</a></li>
+					</ul>
+					<div id='tab-1'><h3>An alert message is coming after the animation...</h3></div>
+					<div id='tab-2'><h3>TAB 2</h3></div>
+					<div id='tab-3'><h3>TAB 3</h3></div>
+				</div>
+			</article>
+		</section>
 	</div>
 	<!-- MAIN CONTAINER ends -->
 
