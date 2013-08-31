@@ -63,7 +63,7 @@ HEADER {
 
 HEADER H1 {
 	color: inherit;
-	font-size: 47px;
+	font-size: 74px;
 	font-weight: 700;
 	padding-top: 110px;
 }
@@ -159,6 +159,7 @@ FOOTER {
 .tabs > DIV H3 {
 	border-bottom: 4px solid #E5E5E5 !important;
 	color: #ccc !important;
+	font-weight: 300;
 	line-height: 186px !important;
 }
 
@@ -172,6 +173,7 @@ FOOTER {
 	color: #ccc;
 	display: block;
 	font-size: 18px;
+	font-weight: 300;
 	padding: 14px 24px;
 	text-decoration: none;
 }
