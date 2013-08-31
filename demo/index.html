@@ -21,9 +21,9 @@
 
 <div id="wrapper">
 
-	<div class="top_bar">
+<!-- 	<div class="top_bar">
 		Tabslet
-	</div>
+	</div> -->
 	<!-- HEADER -->
 	<div id="header_wrapper">
 		<header>
@@ -37,23 +37,28 @@
 
 	<!-- MAIN CONTAINER -->
 	<div id="body_wrapper">
-
+		<!-- <h3>About</h3> -->
+		<section id="body" role="main">
+			<article>
+				<h2><strong>Tabslet is</strong></h2>
+				<h2>...yet another jQuery plugin for tabs and more...</h2>
+				<h2>...compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2.</h2>
+			</article>
+		</section>
 		<h3>Demostration</h3>
 		<!-- CONTENT -->
-		<section id="body" role="main">
+		<section>
 			<!-- CONTENT BLOCK -->
 			<article>
 				<h2>Default</h2>
-				<p>
 <pre data-language="javascript">
 $('.tabs').tabslet();
 </pre>
-				</p>
 				<div class='tabs tabs_default'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Information</a></li>
-						<li><a href="#tab-2">TAB 2</a></li>
-						<li><a href="#tab-3">TAB 3</a></li>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
 					</ul>
 					<div id='tab-1'><h3>This is the default tab functionality.</h3></div>
 					<div id='tab-2'><h3>Tab 2</h3></div>
@@ -62,7 +67,6 @@ $('.tabs').tabslet();
 			</article>
 			<article>
 				<h2>Hover</h2>
-				<p>
 <pre data-language="javascript">
 $('.tabs').tabslet({
 	mouseevent: 'hover',
@@ -70,12 +74,11 @@ $('.tabs').tabslet({
 	animation: false
 });
 </pre>
-				</p>
 				<div class='tabs tabs_hover'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Information</a></li>
-						<li><a href="#tab-2">TAB 2</a></li>
-						<li><a href="#tab-3">TAB 3</a></li>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
 					</ul>
 					<div id='tab-1'><h3>Tabs change on mouse over...</h3></div>
 					<div id='tab-2'><h3>Tab 2</h3></div>
@@ -84,7 +87,6 @@ $('.tabs').tabslet({
 			</article>
 			<article>
 				<h2>Animation</h2>
-				<p>
 <pre data-language="javascript">
 $('.tabs').tabslet({
 	mouseevent: 'click',
@@ -92,12 +94,11 @@ $('.tabs').tabslet({
 	animation: true
 });
 </pre>
-				</p>
 				<div class='tabs tabs_animate'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Information</a></li>
-						<li><a href="#tab-2">TAB 2</a></li>
-						<li><a href="#tab-3">TAB 3</a></li>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
 					</ul>
 					<div id='tab-1'><h3>Change the tab to see that there is an animation.</h3></div>
 					<div id='tab-2'><h3>Tab 2</h3></div>
@@ -106,19 +107,17 @@ $('.tabs').tabslet({
 			</article>
 			<article>
 				<h2>Rotation</h2>
-				<p>
 <pre data-language="javascript">
 $('.tabs').tabslet({
 	autorotate: true,
 	delay: 6000
 });
 </pre>
-				</p>
 				<div class='tabs tabs_rotate'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Information</a></li>
-						<li><a href="#tab-2">TAB 2</a></li>
-						<li><a href="#tab-3">TAB 3</a></li>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
 					</ul>
 					<div id='tab-1'><h3>It's alive!</h3></div>
 					<div id='tab-2'><h3>It's alive!!</h3></div>
@@ -133,20 +132,18 @@ $('.tabs').tabslet({
 		<section>
 			<!-- CONTENT BLOCK -->
 			<article>
-				<h2>Custom event "before"</h2>
-				<p>
+				<h2>Custom event "_before"</h2>
 <pre data-language="javascript">
 $('.before_event').tabslet();
 $('.before_event').on("_before", function() {
 	// do stuff here
 });
 </pre>
-				</p>
 				<div class='tabs before_event'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Information</a></li>
-						<li><a href="#tab-2">TAB 2</a></li>
-						<li><a href="#tab-3">TAB 3</a></li>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
 					</ul>
 					<div id='tab-1'><h3>An alert message before the tab change...</h3></div>
 					<div id='tab-2'><h3>TAB 2</h3></div>
@@ -154,8 +151,7 @@ $('.before_event').on("_before", function() {
 				</div>
 			</article>
 			<article>
-				<h2>Custom event "after"</h2>
-				<p>
+				<h2>Custom event "_after"</h2>
 <pre data-language="javascript">
 $('.after_event').tabslet({
 	animation: true
@@ -164,12 +160,11 @@ $('.after_event').on("_after", function() {
 	// do stuff here
 });
 </pre>
-				</p>
 				<div class='tabs after_event'>
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Information</a></li>
-						<li><a href="#tab-2">TAB 2</a></li>
-						<li><a href="#tab-3">TAB 3</a></li>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
 					</ul>
 					<div id='tab-1'><h3>An alert message is coming after the animation...</h3></div>
 					<div id='tab-2'><h3>TAB 2</h3></div>
@@ -182,17 +177,15 @@ $('.after_event').on("_after", function() {
 		<section>
 			<!-- CONTENT BLOCK -->
 			<article>
-				<h2>data-toggle</h2>
-				<p>
+				<h2>The attribute "data-toggle"</h2>
 <pre data-language="javascript">
 <div data-toggle="tabslet"></div>
 </pre>
-				</p>
 				<div class='tabs' data-toggle="tabslet">
 					<ul class='horizontal'>
-						<li><a href="#tab-1">Information</a></li>
-						<li><a href="#tab-2">TAB 2</a></li>
-						<li><a href="#tab-3">TAB 3</a></li>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
 					</ul>
 					<div id='tab-1'><h3>Just include the plugin and add the data attribute to your html tag!</h3></div>
 					<div id='tab-2'><h3>TAB 2</h3></div>

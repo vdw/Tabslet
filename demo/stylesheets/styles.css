@@ -95,6 +95,19 @@ HEADER H2 {
 	width: 100%;
 }
 
+SECTION#body {
+	background: #F17C71;
+}
+
+SECTION#body H2 {
+	color: white;
+	line-height: 35px;
+}
+
+SECTION#body H2 STRONG {
+	font-weight: 700;
+}
+
 SECTION {
 	background: #F1F1F1;
 	/*margin-top: 80px;*/
@@ -105,6 +118,15 @@ ARTICLE {
 	margin: 0 auto;
 	padding: 40px 0;
 	max-width: 940px;
+}
+
+ARTICLE H2 {
+	color: #E95855;
+	margin-bottom: 10px;
+}
+
+PRE {
+	width: 302px;
 }
 
 /**
@@ -131,11 +153,12 @@ FOOTER {
 	/*border-top: 1px solid #c7c7c7*/
 	margin-top: 15px;
 	background: #F17C71 !important;
-	border-bottom: 4px solid #E95855 !important;
+	/*border-bottom: 4px solid #E95855 !important;*/
 }
 
 .tabs > DIV H3 {
 	border-bottom: 4px solid #E5E5E5 !important;
+	color: #ccc !important;
 	line-height: 186px !important;
 }
 
@@ -146,10 +169,10 @@ FOOTER {
 }
 
 .tabs A {
-	color: #888;
+	color: #ccc;
 	display: block;
-	font-size: 11px;
-	padding: 14px 20px;
+	font-size: 18px;
+	padding: 14px 24px;
 	text-decoration: none;
 }
 
