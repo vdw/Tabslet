@@ -29,10 +29,11 @@
 
 		var defaults = {
 			mouseevent: 'click',
-			attribute: 'href',
-			animation: false,
+			attribute:  'href',
+			animation:  false,
 			autorotate: false,
-			delay: 6000
+			delay:      6000,
+			active:     1
 		};
 
 		var options = $.extend(defaults, options);
@@ -42,8 +43,8 @@
 			var $this = $(this);
 
 			$this.find('> div').hide();
-			$this.find('> div:first').show();
-			$this.find('> ul li:first').addClass('active');
+			$this.find('> div').eq(options.active - 1).show();
+			$this.find('> ul li').eq(options.active - 1).addClass('active');
 
 			var fn = eval(
 
@@ -81,7 +82,7 @@
 			init;
 
 			// Autorotate
-			var elements = $this.find('> ul li'), i = 0;
+			var elements = $this.find('> ul li'), i = options.active - 2; // ungly
 
 			function next() {
 
