@@ -126,7 +126,7 @@ ARTICLE H2 {
 }
 
 PRE {
-	width: 302px;
+	width: 400px;
 }
 
 /**
@@ -151,7 +151,7 @@ FOOTER {
  */
 .tabs > DIV {
 	/*border-top: 1px solid #c7c7c7*/
-	margin-top: 15px;
+	margin-top: 10px;
 	background: #F17C71 !important;
 	/*border-bottom: 4px solid #E95855 !important;*/
 }
@@ -166,7 +166,7 @@ FOOTER {
 .tabs LI {
 	background: white;
 	border-bottom: 4px solid #E5E5E5;
-	margin-right: 15px;
+	margin-right: 10px;
 }
 
 .tabs A {
