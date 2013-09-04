@@ -2,7 +2,7 @@
 
 Yet another jQuery plugin for tabs with some extra features
 
-[For more information and demostration][1]
+[For more information and demonstration][1]
 
 ## Features
 
