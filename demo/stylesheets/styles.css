@@ -114,6 +114,11 @@ SECTION {
 	width: 100%;
 }
 
+.stuck {
+	position: fixed;
+	top: 0;
+}
+
 ARTICLE {
 	margin: 0 auto;
 	padding: 40px 0;

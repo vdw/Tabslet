@@ -1,6 +1,8 @@
 // Run javascript after DOM is initialized
 $(document).ready(function() {
 
+	$('#body').waypoint('sticky');
+
 	$('.tabs_default').tabslet();
 
 	$('.tabs_hover').tabslet({
