@@ -63,14 +63,18 @@ HEADER {
 
 HEADER H1 {
 	color: inherit;
-	font-size: 74px;
-	font-weight: 700;
-	padding-top: 110px;
+	font-size: 48px;
+	font-weight: 900;
+	line-height: 48px;
+	padding-top: 120px;
+	text-transform: uppercase;
 }
 
 HEADER H2 {
 	color: inherit;
-	font-size: 24px;
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
 /**
@@ -101,17 +105,24 @@ SECTION#body {
 
 SECTION#body H2 {
 	color: white;
-	line-height: 35px;
+	line-height: 25px;
 }
 
 SECTION#body H2 STRONG {
-	font-weight: 700;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.5;
 }
 
 SECTION {
 	background: #F1F1F1;
 	/*margin-top: 80px;*/
 	width: 100%;
+}
+
+.stuck {
+	position: fixed;
+	top: 0;
 }
 
 ARTICLE {
