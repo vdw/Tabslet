@@ -2,7 +2,8 @@
 
 Yet another jQuery plugin for tabs with some extra features
 
-[For more information and demonstration][1]
+[For demonstration][1]
+[Documentation][2]
 
 ## Features
 
@@ -37,3 +38,4 @@ limitations under the License.
 
   [1]: http://vdw.github.io/Tabslet/
   [2]: http://www.apache.org/licenses/LICENSE-2.0
+  [3]: https://github.com/vdw/Tabslet/wiki
