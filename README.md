@@ -2,8 +2,8 @@
 
 Yet another jQuery plugin for tabs with some extra features
 
-[For demonstration][1]
-[Documentation][2]
+* [For demonstration][1]
+* [Documentation][2]
 
 ## Features
 
