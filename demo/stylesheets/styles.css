@@ -18,7 +18,7 @@
 BODY {
 
 	font-size: 13px; /* Override typography */
-	font-family: 'Lato', sans-serif;
+	font-family: "Open Sans", helvetica, arial, sans-serif;
 }
 
 #wrapper {
@@ -64,7 +64,6 @@ HEADER {
 HEADER H1 {
 	color: inherit;
 	font-size: 48px;
-	font-weight: 900;
 	line-height: 48px;
 	padding-top: 120px;
 	text-transform: uppercase;
@@ -105,13 +104,9 @@ SECTION#body {
 
 SECTION#body H2 {
 	color: white;
+	font-size: 18px;
+	font-weight: 100;
 	line-height: 25px;
-}
-
-SECTION#body H2 STRONG {
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 1.5;
 }
 
 SECTION {
@@ -127,7 +122,7 @@ SECTION {
 
 ARTICLE {
 	margin: 0 auto;
-	padding: 40px 0;
+	padding: 20px 0;
 	max-width: 940px;
 }
 
@@ -236,6 +231,8 @@ FOOTER {
 	color: white;
 	display: block;
 	float: left;
+	font-size: 14px;
+	font-weight: 500;
 	line-height: 48px;
 	margin-top: 20px;
 	text-decoration: none;
