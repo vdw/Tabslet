@@ -64,7 +64,8 @@ HEADER {
 HEADER H1 {
 	color: inherit;
 	font-size: 48px;
-	line-height: 48px;
+	letter-spacing: 4px;
+	line-height: 78px;
 	padding-top: 120px;
 	text-transform: uppercase;
 }
@@ -72,7 +73,7 @@ HEADER H1 {
 HEADER H2 {
 	color: inherit;
 	font-size: 18px;
-	letter-spacing: 2px;
+	letter-spacing: 5px;
 	text-transform: uppercase;
 }
 
@@ -99,14 +100,15 @@ HEADER H2 {
 }
 
 SECTION#body {
-	background: #F17C71;
+	background: #a0cac0;
 }
 
 SECTION#body H2 {
 	color: white;
 	font-size: 18px;
-	font-weight: 100;
-	line-height: 25px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 34px;
 }
 
 SECTION {
@@ -122,7 +124,7 @@ SECTION {
 
 ARTICLE {
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 30px 0 20px;
 	max-width: 940px;
 }
 
@@ -185,8 +187,8 @@ FOOTER {
 }
 
 .tabs LI:hover {
-	background: #F17C71;
-	border-bottom: 4px solid #E95855;
+	background: #a0cac0;
+	border-bottom: 4px solid #68a697;
 }
 
 .tabs LI:hover A {
@@ -194,8 +196,8 @@ FOOTER {
 }
 
 .active {
-	background: #F17C71 !important;
-	border-bottom: 4px solid #E95855 !important;
+	background: #a0cac0 !important;
+	border-bottom: 4px solid #68a697 !important;
 }
 
 .active A {
@@ -209,8 +211,9 @@ FOOTER {
 	display: block;
 	float: left;
 	font-size: 14px;
+	letter-spacing: 2px;
 	margin-top: 20px;
-	margin-right: 22px;
+	margin-right: 26px;
 	padding: 15px 20px;
 	text-align: center;
 	text-transform: uppercase;
@@ -232,7 +235,8 @@ FOOTER {
 	display: block;
 	float: left;
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 300;
+	letter-spacing: 1px;
 	line-height: 48px;
 	margin-top: 20px;
 	text-decoration: none;
@@ -240,4 +244,12 @@ FOOTER {
 
 .link:hover {
 	text-decoration: underline;
+}
+
+.anchorLink {
+	border-bottom: 1px dashed white;
+}
+
+.anchorLink:hover {
+	text-decoration: none;
 }
