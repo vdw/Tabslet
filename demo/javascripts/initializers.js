@@ -22,10 +22,7 @@ $(document).ready(function() {
 		delay: 6000
 	});
 
-	$('.tabs_controls').tabslet({
-		autorotate: true,
-		delay: 6000
-	});
+	$('.tabs_controls').tabslet();
 
 	$('.before_event').tabslet();
 	$('.before_event').on("_before", function() {
