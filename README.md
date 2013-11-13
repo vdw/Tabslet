@@ -11,7 +11,7 @@ Beyond the standard tabs functionality:
 
 * Change tabs on mouse over
 * Use animation effect for tabs' changing
-* Ability to use either href or alt attribute to target tab
+* Ability to use either _href_ or _alt_ attribute to target tab
 * Rotation
 * Controls
 * Custom events
