@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Tabslet jquery plugin | Yet another plugin for tabs</title>
+	<title>Tabslet jQuery plugin | Yet another plugin for tabs</title>
 	<meta name="description" content="Yet another plugin for tabs">
 
 	<!-- STYLES -->
@@ -56,7 +56,7 @@
 			<article>
 				<h2>
 					Tabslet is yet another jQuery plugin for tabs, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
-					supports <a class="anchorLink" href="#custom_event">custom events</a>, <a class="anchorLink" href="#rotation">rotation</a> and <a class="anchorLink" href="#animation">animation</a></h2>
+					supports <a class="anchorLink" href="#custom_event">custom events</a>, <a class="anchorLink" href="#rotation">rotation</a>, <a class="anchorLink" href="#animation">animation</a> and <a class="anchorLink" href="#controls">controls</a></h2>
 			</article>
 		</section>
 		<h3>Demonstration</h3>
@@ -138,6 +138,25 @@ $('.tabs').tabslet({
 					<div id='tab-3'><h3>It's alive!!!</h3></div>
 				</div>
 			</article>
+			<article id="controls">
+				<h2>Controls</h2>
+<pre data-language="javascript">
+$('.tabs').tabslet();
+</pre>
+				<div class='tabs tabs_controls'>
+					<a class="prev">previous</a>
+					<a class="next">next</a>
+					<span class='clear'></span>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
+					</ul>
+					<div id='tab-1'><h3>Tab 1</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
+				</div>
+			</article>
 			<!-- CONTENT BLOCK ends -->
 
 		</section>
@@ -214,7 +233,7 @@ $('.after_event').on("_after", function() {
 	<footer>
 		<!-- FOOTER CONTAINER-->
 		<div class="footer_wrapper">
-			<p>Built by <a href="https://github.com/vdw">vdw</a> aka <a href="http://gr.linkedin.com/in/dkrestos/" target="_blank">Dimitris Krestos</a></p><p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
+			<p>Built by <a href="https://github.com/vdw">vdw</a> aka <a href="http://gr.linkedin.com/in/dkrestos/" target="_blank">Dimitris Krestos</a><br />Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a></p>
 		</div>
 		<!-- FOOTER CONTAINER ends -->
 	</footer>
