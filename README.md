@@ -13,6 +13,7 @@ Beyond the standard tabs functionality:
 * Use animation effect for tabs' changing
 * Ability to use either href or alt attribute to target tab
 * Rotation
+* Controls
 * Custom events
 
 ## Compatibility

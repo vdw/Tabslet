@@ -22,6 +22,11 @@ $(document).ready(function() {
 		delay: 6000
 	});
 
+	$('.tabs_controls').tabslet({
+		autorotate: true,
+		delay: 6000
+	});
+
 	$('.before_event').tabslet();
 	$('.before_event').on("_before", function() {
 		alert('This alert comes before the tab change!')

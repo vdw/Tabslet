@@ -31,6 +31,16 @@ H2 {
 	font-weight: 300;
 }
 
+/* Clear fix */
+.clear {
+	clear: both;
+	display: block;
+	float: none;
+	font-size: 1px;
+	height: 0px;
+	line-height: 0
+}
+
 /**
  * HEADER
  * Your header rules
@@ -257,4 +267,19 @@ FOOTER {
 .screenshot {
 	position: absolute;
 	clip: rect(0 0 0 0);
+}
+
+.prev,
+.next {
+	background: white !important;
+	color: #a0cac0 !important;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.prev:hover,
+.next:hover {
+	background: #a0cac0 !important;
+	color: white !important;
 }

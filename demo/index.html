@@ -56,7 +56,7 @@
 			<article>
 				<h2>
 					Tabslet is yet another jQuery plugin for tabs, is compatible with IE7+, Chrome, Firefox, Safari and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2. and
-					supports <a class="anchorLink" href="#custom_event">custom events</a>, <a class="anchorLink" href="#rotation">rotation</a> and <a class="anchorLink" href="#animation">animation</a></h2>
+					supports <a class="anchorLink" href="#custom_event">custom events</a>, <a class="anchorLink" href="#rotation">rotation</a>, <a class="anchorLink" href="#animation">animation</a> and <a class="anchorLink" href="#controls">controls</a></h2>
 			</article>
 		</section>
 		<h3>Demonstration</h3>
@@ -136,6 +136,25 @@ $('.tabs').tabslet({
 					<div id='tab-1'><h3>It's alive!</h3></div>
 					<div id='tab-2'><h3>It's alive!!</h3></div>
 					<div id='tab-3'><h3>It's alive!!!</h3></div>
+				</div>
+			</article>
+			<article id="controls">
+				<h2>Controls</h2>
+<pre data-language="javascript">
+$('.tabs').tabslet();
+</pre>
+				<div class='tabs tabs_controls'>
+					<a class="prev">previous</a>
+					<a class="next">next</a>
+					<span class='clear'></span>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">information</a></li>
+						<li><a href="#tab-2">tab</a></li>
+						<li><a href="#tab-3">tab</a></li>
+					</ul>
+					<div id='tab-1'><h3>Tab 1</h3></div>
+					<div id='tab-2'><h3>Tab 2</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
 				</div>
 			</article>
 			<!-- CONTENT BLOCK ends -->

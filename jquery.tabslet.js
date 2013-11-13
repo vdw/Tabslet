@@ -1,5 +1,5 @@
 /**
- * Tabslet jQuery plugin
+ * Tabs plugin
  *
  * @copyright	Copyright 2012, Dimitris Krestos
  * @license		Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
@@ -33,7 +33,11 @@
 			animation:  false,
 			autorotate: false,
 			delay:      6000,
-			active:     1
+			active:     1,
+			controls:   {
+				prev: '.prev',
+				next: '.next'
+			}
 		};
 
 		var options = $.extend(defaults, options);
@@ -82,27 +86,52 @@
 			init;
 
 			// Autorotate
-			var elements = $this.find('> ul li'), i = options.active - 2; // ungly
+			var elements = $this.find('> ul li'), i = options.active - 1; // ungly
 
-			function next() {
+			function forward() {
 
 				i = ++i % elements.length; // wrap around
 
 				options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
 
-				var t = setTimeout(next, options.delay);
+				var t = setTimeout(forward, options.delay);
 
 				$this.mouseover(function () {
+
 					clearTimeout(t);
+
 				});
 
 			}
 
 			if (options.autorotate) {
 
-				setTimeout(next, 0);
+				setTimeout(forward, 0);
 
 			}
+
+			function move(direction) {
+
+				if (direction == 'forward') {
+					i = ++i % elements.length; // wrap around
+				}
+
+				if (direction == 'backward') {
+					i = --i % elements.length; // wrap around
+				}
+
+				elements.eq(i).click();
+
+			}
+
+			$(this).find(options.controls.next).click(function() {
+				move('forward');
+			});
+
+
+			$(this).find(options.controls.prev).click(function() {
+				move('backward');
+			});
 
 		});
 
