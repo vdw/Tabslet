@@ -141,7 +141,12 @@ $('.tabs').tabslet({
 			<article id="controls">
 				<h2>Controls</h2>
 <pre data-language="javascript">
-$('.tabs').tabslet();
+$('.tabs').tabslet({
+	controls: {
+		prev: '.prev',
+		next: '.next'
+	}
+});
 </pre>
 				<div class='tabs tabs_controls'>
 					<a class="prev">previous</a>
