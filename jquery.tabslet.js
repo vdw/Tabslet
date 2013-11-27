@@ -47,8 +47,8 @@
 			var $this = $(this);
 
 			$this.find('> div').hide();
-			$this.find('> div').eq(options.active --).show();
-			$this.find('> ul li').eq(options.active --).addClass('active');
+			$this.find('> div').eq(options.active - 1).show();
+			$this.find('> ul li').eq(options.active - 1).addClass('active');
 
 			var fn = eval(
 
