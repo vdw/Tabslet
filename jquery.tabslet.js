@@ -47,8 +47,8 @@
 			var $this = $(this);
 
 			$this.find('> div').hide();
-			$this.find('> div').eq(options.active - 1).show();
-			$this.find('> ul li').eq(options.active - 1).addClass('active');
+			$this.find('> div').eq(options.active --).show();
+			$this.find('> ul li').eq(options.active --).addClass('active');
 
 			var fn = eval(
 
@@ -104,21 +104,13 @@
 
 			}
 
-			if (options.autorotate) {
-
-				setTimeout(forward, 0);
-
-			}
+			if (options.autorotate) setTimeout(forward, 0);
 
 			function move(direction) {
 
-				if (direction == 'forward') {
-					i = ++i % elements.length; // wrap around
-				}
+				if (direction == 'forward') i = ++i % elements.length; // wrap around
 
-				if (direction == 'backward') {
-					i = --i % elements.length; // wrap around
-				}
+				if (direction == 'backward') i = --i % elements.length; // wrap around
 
 				elements.eq(i).click();
 
