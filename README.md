@@ -21,6 +21,10 @@ Beyond the standard tabs functionality:
 Compatible with IE7+, Chrome, Firefox, Safari
 and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2.
 
+## Credits
+[Stevy][4] for the logo designs and support.
+[Prince][5] for his support and ideas.
+
 ## Copyright and license
 
 Copyright 2012 Dimitris Krestos
@@ -40,3 +44,5 @@ limitations under the License.
   [1]: http://vdw.github.io/Tabslet/
   [2]: http://www.apache.org/licenses/LICENSE-2.0
   [3]: https://github.com/vdw/Tabslet/wiki
+  [4]: http://stevy.gr/
+  [5]: http://prince.gr/
