@@ -283,3 +283,9 @@ FOOTER {
 	background: #a0cac0 !important;
 	color: white !important;
 }
+
+.logo {
+	margin-top: -6px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
