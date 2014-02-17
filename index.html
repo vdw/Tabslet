@@ -85,6 +85,24 @@ $('.tabs').tabslet();
 				</div>
 			</article>
 			<article>
+				<h2>Active</h2>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+	active: 2
+});
+</pre>
+				<div class='tabs tabs_active'>
+					<ul class='horizontal'>
+						<li><a href="#tab-1">tab</a></li>
+						<li><a href="#tab-2">information</a></li>
+						<li><a href="#tab-3">tab</a></li>
+					</ul>
+					<div id='tab-1'><h3>Tab 1</h3></div>
+					<div id='tab-2'><h3>The second tab is active when page loads.</h3></div>
+					<div id='tab-3'><h3>Tab 3</h3></div>
+				</div>
+			</article>
+			<article>
 				<h2>Hover</h2>
 <pre data-language="javascript">
 $('.tabs').tabslet({

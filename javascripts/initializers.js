@@ -5,6 +5,10 @@ $(document).ready(function() {
 
 	$('.tabs_default').tabslet();
 
+	$('.tabs_active').tabslet({
+		active: 2
+	});
+
 	$('.tabs_hover').tabslet({
 		mouseevent: 'hover',
 		attribute: 'href',
