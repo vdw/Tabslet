@@ -28,7 +28,7 @@
       attribute: "href"
       animation: false
       autorotate: false
-      stoponover: false
+      pauseonhover: true
       delay: 6000
       active: 1
       controls:
@@ -46,7 +46,7 @@
         (if options.mouseevent is "hover" then elements.eq(i).trigger("mouseover") else elements.eq(i).click())
         t = setTimeout(forward, options.delay)
         $this.mouseover ->
-          clearTimeout t  if options.stoponover
+          clearTimeout t  if options.pauseonhover
 
       move = (direction) ->
         i = ++i % elements.length  if direction is "forward" # wrap around
@@ -82,7 +82,11 @@
       # Autorotate
       elements = $this.find("> ul li")
 
-      setTimeout forward, 0  if options.autorotate
+      if options.autorotate
+        setTimeout forward, 0
+        if options.pauseonhover
+          $this.on "mouseleave", ->
+            setTimeout forward, 1000
 
       $(this).find(options.controls.next).click ->
         move "forward"
