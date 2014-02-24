@@ -32,7 +32,8 @@
 			attribute:  'href',
 			animation:  false,
 			autorotate: false,
-			delay:      6000,
+			stoponover: false,
+			delay:      2000,
 			active:     1,
 			controls:   {
 				prev: '.prev',
@@ -98,7 +99,7 @@
 
 				$this.mouseover(function () {
 
-					clearTimeout(t);
+					if (options.stoponover) clearTimeout(t);
 
 				});
 
