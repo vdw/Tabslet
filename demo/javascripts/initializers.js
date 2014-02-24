@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 	$('.tabs_rotate').tabslet({
 		autorotate: true,
-		delay: 6000
+		delay: 3000
 	});
 
 	$('.tabs_controls').tabslet();

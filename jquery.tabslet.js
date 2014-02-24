@@ -28,14 +28,14 @@
 	$.fn.tabslet = function(options) {
 
 		var defaults = {
-			mouseevent: 'click',
-			attribute:  'href',
-			animation:  false,
-			autorotate: false,
-			stoponover: false,
-			delay:      2000,
-			active:     1,
-			controls:   {
+			mouseevent:   'click',
+			attribute:    'href',
+			animation:    false,
+			autorotate:   false,
+			pauseonhover: true,
+			delay:        2000,
+			active:       1,
+			controls:     {
 				prev: '.prev',
 				next: '.next'
 			}
@@ -99,13 +99,19 @@
 
 				$this.mouseover(function () {
 
-					if (options.stoponover) clearTimeout(t);
+					if (options.pauseonhover) clearTimeout(t);
 
 				});
 
 			}
 
-			if (options.autorotate) setTimeout(forward, 0);
+			if (options.autorotate) {
+
+				setTimeout(forward, 0);
+
+				if (options.pauseonhover) $this.on( "mouseleave", function() { setTimeout(forward, 1000); });
+
+			}
 
 			function move(direction) {
 
