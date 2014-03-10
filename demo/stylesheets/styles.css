@@ -31,6 +31,10 @@ H2 {
 	font-weight: 300;
 }
 
+SMALL {
+	font-size: 9px;
+}
+
 /* Clear fix */
 .clear {
 	clear: both;
