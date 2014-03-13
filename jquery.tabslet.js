@@ -47,6 +47,15 @@
 
 			var $this = $(this);
 
+			// Ungly overwrite
+			options.mouseevent    = $(this).data('mouseevent') || options.mouseevent;
+			options.attribute     = $(this).data('attribute') || options.attribute;
+			options.animation     = $(this).data('animation') || options.animation;
+			options.autorotate    = $(this).data('autorotate') || options.autorotate;
+			options.pauseonhover 	= $(this).data('pauseonhover') || options.pauseonhover;
+			options.delay 				= $(this).data('delay') || options.delay;
+			options.active 				= $(this).data('active') || options.active;
+
 			$this.find('> div').hide();
 			$this.find('> div').eq(options.active - 1).show();
 			$this.find('> ul li').eq(options.active - 1).addClass('active');
