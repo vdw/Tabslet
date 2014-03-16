@@ -1,6 +1,6 @@
 # Tabslet
 
-Yet another jQuery plugin for tabs with some extra features
+Yet another jQuery plugin for tabs, lightweight, easy to use and with some extra features
 
 * [Demonstration page][1]
 * [Documentation (wiki)][3]
@@ -9,17 +9,18 @@ Yet another jQuery plugin for tabs with some extra features
 
 Beyond the standard tabs functionality:
 
+* Custom events
+* Data attribute initialization and configuration
+* Controls (next, previous)
+* Rotation (usefull for banner rotators/carousels)
 * Change tabs on mouse over
 * Use animation effect for tabs' changing
 * Ability to use either _href_ or _alt_ attribute to target tab
-* Rotation
-* Controls
-* Custom events
 
 ## Compatibility
 
 Compatible with IE7+, Chrome, Firefox, Safari
-and jQuery 1.8.1, 1.9.1, 1.10.1, 2.0.2.
+and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0.
 
 ## Credits
 * [Stevy.gr][4]

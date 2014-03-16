@@ -5,7 +5,7 @@
   "authors": [
     "Dimitris Krestos <dkrestos@gmail.com>"
   ],
-  "description": "Yet another jQuery plugin for tabs with some extra features.",
+  "description": "Yet another jQuery plugin for tabs, lightweight, easy to use and with some extra features.",
   "main": "jquery.tabslet.min.js",
   "keywords": [
     "tabs",
