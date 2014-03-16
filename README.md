@@ -21,6 +21,7 @@ Beyond the standard tabs functionality:
 
 Compatible with IE7+, Chrome, Firefox, Safari
 and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0.
+No additional dependencies.
 
 ## Credits
 * [Stevy.gr][4]
