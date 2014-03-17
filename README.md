@@ -17,12 +17,12 @@ Beyond the standard tabs functionality:
 * Use animation effect for tabs' changing
 * Ability to use either _href_ or _alt_ attribute to target tab
 
-## Compatibility
+## Compatibility/Dependencies
 
 Compatible with IE7+, Chrome, Firefox, Safari
 and jQuery 1.8.1, 1.9.1, 1.11.0, 2.1.0.
 
-No additional dependencies.
+No additional dependencies are required.
 
 ## Credits
 * [Stevy.gr][4]
