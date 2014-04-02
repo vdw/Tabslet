@@ -43,18 +43,18 @@
 
 		var options = $.extend(defaults, options);
 
-		$(this).each(function() {
+		return this.each(function() {
 
 			var $this = $(this);
 
 			// Ungly overwrite
-			options.mouseevent    = $(this).data('mouseevent') || options.mouseevent;
-			options.attribute     = $(this).data('attribute') || options.attribute;
-			options.animation     = $(this).data('animation') || options.animation;
-			options.autorotate    = $(this).data('autorotate') || options.autorotate;
-			options.pauseonhover 	= $(this).data('pauseonhover') || options.pauseonhover;
-			options.delay 				= $(this).data('delay') || options.delay;
-			options.active 				= $(this).data('active') || options.active;
+			options.mouseevent    = $this.data('mouseevent') || options.mouseevent;
+			options.attribute     = $this.data('attribute') || options.attribute;
+			options.animation     = $this.data('animation') || options.animation;
+			options.autorotate    = $this.data('autorotate') || options.autorotate;
+			options.pauseonhover 	= $this.data('pauseonhover') || options.pauseonhover;
+			options.delay 				= $this.data('delay') || options.delay;
+			options.active 				= $this.data('active') || options.active;
 
 			$this.find('> div').hide();
 			$this.find('> div').eq(options.active - 1).show();
@@ -132,13 +132,16 @@
 
 			}
 
-			$(this).find(options.controls.next).click(function() {
+			$this.find(options.controls.next).click(function() {
 				move('forward');
 			});
 
-
-			$(this).find(options.controls.prev).click(function() {
+			$this.find(options.controls.prev).click(function() {
 				move('backward');
+			});
+
+			$this.on ('destroy', function() {
+				$(this).removeData();
 			});
 
 		});
