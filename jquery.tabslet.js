@@ -28,14 +28,15 @@
 	$.fn.tabslet = function(options) {
 
 		var defaults = {
-			mouseevent:   'click',
-			attribute:    'href',
-			animation:    false,
-			autorotate:   false,
-			pauseonhover: true,
-			delay:        2000,
-			active:       1,
-			controls:     {
+			mouseevent:    'click',
+			attribute:     'href',
+			animation:     false,
+            animationrate: 400,
+			autorotate:    false,
+			pauseonhover:  true,
+			delay:         2000,
+			active:        1,
+			controls:      {
 				prev: '.prev',
 				next: '.next'
 			}
@@ -68,22 +69,23 @@
 
 					$this.find('> ul li').removeClass('active');
 					$(this).addClass('active');
-					$this.find('> div').hide();
+					var currentTab = $(this).find('a').attr(options.attribute),
+                        contents = $this.find('> div'),
+                        currentContent = $this.find(currentTab);
 
-					var currentTab = $(this).find('a').attr(options.attribute);
-
-					if (options.animation) {
-
-						$this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
-							$(this).trigger('_after');
-						});
-
-					} else {
-
-						$this.find(currentTab).show();
-						$(this).trigger('_after');
-
-					}
+                    if (options.animation) {
+                        contents.animate({opacity: 0}, options.animationrate).promise().done(function(){
+                            contents.css('display', 'none');
+                            currentContent.css('display', 'block');
+                            currentContent.animate( { opacity: 1 }, options.animationrate, function() {
+                                $(this).trigger('_after');
+                            });
+                        });
+                    } else {
+                        contents.hide();
+                        currentContent.show();
+                        $(this).trigger('_after');
+                    }
 
 					return false;
 
