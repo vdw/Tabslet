@@ -31,7 +31,7 @@
 			mouseevent:    'click',
 			attribute:     'href',
 			animation:     false,
-            animationrate: 400,
+            		animationrate: 400,
 			autorotate:    false,
 			pauseonhover:  true,
 			delay:         2000,
@@ -70,22 +70,22 @@
 					$this.find('> ul li').removeClass('active');
 					$(this).addClass('active');
 					var currentTab = $(this).find('a').attr(options.attribute),
-                        contents = $this.find('> div'),
-                        currentContent = $this.find(currentTab);
-
-                    if (options.animation) {
-                        contents.animate({opacity: 0}, options.animationrate).promise().done(function(){
-                            contents.css('display', 'none');
-                            currentContent.css('display', 'block');
-                            currentContent.animate( { opacity: 1 }, options.animationrate, function() {
-                                $(this).trigger('_after');
-                            });
-                        });
-                    } else {
-                        contents.hide();
-                        currentContent.show();
-                        $(this).trigger('_after');
-                    }
+			                    contents = $this.find('> div'),
+			                    currentContent = $this.find(currentTab);
+			
+					if (options.animation) {
+						contents.animate({opacity: 0}, options.animationrate).promise().done(function(){
+							contents.css('display', 'none');
+							currentContent.css('display', 'block');
+							currentContent.animate( { opacity: 1 }, options.animationrate, function() {
+								$(this).trigger('_after');
+							});
+						});
+					} else {
+						contents.hide();
+						currentContent.show();
+						$(this).trigger('_after');
+					}
 
 					return false;
 
