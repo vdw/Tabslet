@@ -47,102 +47,108 @@
 
 			var $this = $(this);
 
-			// Ungly overwrite
-			options.mouseevent    = $this.data('mouseevent') || options.mouseevent;
-			options.attribute     = $this.data('attribute') || options.attribute;
-			options.animation     = $this.data('animation') || options.animation;
-			options.autorotate    = $this.data('autorotate') || options.autorotate;
-			options.pauseonhover 	= $this.data('pauseonhover') || options.pauseonhover;
-			options.delay 				= $this.data('delay') || options.delay;
-			options.active 				= $this.data('active') || options.active;
+			if ( !$this.data( 'tabslet-init' ) ) {
 
-			$this.find('> div').hide();
-			$this.find('> div').eq(options.active - 1).show();
-			$this.find('> ul li').eq(options.active - 1).addClass('active');
+				$this.data( 'tabslet-init', true );
 
-			var fn = eval(
+				// Ungly overwrite
+				options.mouseevent    = $this.data('mouseevent') || options.mouseevent;
+				options.attribute     = $this.data('attribute') || options.attribute;
+				options.animation     = $this.data('animation') || options.animation;
+				options.autorotate    = $this.data('autorotate') || options.autorotate;
+				options.pauseonhover 	= $this.data('pauseonhover') || options.pauseonhover;
+				options.delay 				= $this.data('delay') || options.delay;
+				options.active 				= $this.data('active') || options.active;
 
-				function() {
+				$this.find('> div').hide();
+				$this.find('> div').eq(options.active - 1).show();
+				$this.find('> ul li').eq(options.active - 1).addClass('active');
 
-					$(this).trigger('_before');
+				var fn = eval(
 
-					$this.find('> ul li').removeClass('active');
-					$(this).addClass('active');
-					$this.find('> div').hide();
+					function() {
 
-					var currentTab = $(this).find('a').attr(options.attribute);
+						$(this).trigger('_before');
 
-					if (options.animation) {
+						$this.find('> ul li').removeClass('active');
+						$(this).addClass('active');
+						$this.find('> div').hide();
 
-						$this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
+						var currentTab = $(this).find('a').attr(options.attribute);
+
+						if (options.animation) {
+
+							$this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
+								$(this).trigger('_after');
+							});
+
+						} else {
+
+							$this.find(currentTab).show();
 							$(this).trigger('_after');
-						});
 
-					} else {
+						}
 
-						$this.find(currentTab).show();
-						$(this).trigger('_after');
+						return false;
 
 					}
 
-					return false;
+				);
+
+				var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)");
+
+				init;
+
+				// Autorotate
+				var elements = $this.find('> ul li'), i = options.active - 1; // ungly
+
+				var forward = function() {
+
+					i = ++i % elements.length; // wrap around
+
+					options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
+
+					var t = setTimeout(forward, options.delay);
+
+					$this.mouseover(function () {
+
+						if (options.pauseonhover) clearTimeout(t);
+
+					});
 
 				}
 
-			);
+				if (options.autorotate) {
 
-			var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)");
+					setTimeout(forward, 0);
 
-			init;
+					if (options.pauseonhover) $this.on( "mouseleave", function() { setTimeout(forward, 1000); });
 
-			// Autorotate
-			var elements = $this.find('> ul li'), i = options.active - 1; // ungly
+				}
 
-			function forward() {
+				var move = function(direction) {
 
-				i = ++i % elements.length; // wrap around
+					if (direction == 'forward') i = ++i % elements.length; // wrap around
 
-				options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
+					if (direction == 'backward') i = --i % elements.length; // wrap around
 
-				var t = setTimeout(forward, options.delay);
+					elements.eq(i).click();
 
-				$this.mouseover(function () {
+				}
 
-					if (options.pauseonhover) clearTimeout(t);
+				$this.find(options.controls.next).click(function() {
+					move('forward');
+				});
 
+				$this.find(options.controls.prev).click(function() {
+					move('backward');
+				});
+
+				$this.on ('destroy', function() {
+					$(this).removeData();
 				});
 
 			}
-
-			if (options.autorotate) {
-
-				setTimeout(forward, 0);
-
-				if (options.pauseonhover) $this.on( "mouseleave", function() { setTimeout(forward, 1000); });
-
-			}
-
-			function move(direction) {
-
-				if (direction == 'forward') i = ++i % elements.length; // wrap around
-
-				if (direction == 'backward') i = --i % elements.length; // wrap around
-
-				elements.eq(i).click();
-
-			}
-
-			$this.find(options.controls.next).click(function() {
-				move('forward');
-			});
-
-			$this.find(options.controls.prev).click(function() {
-				move('backward');
-			});
-
-			$this.on ('destroy', function() {
-				$(this).removeData();
-			});
 
 		});
 
