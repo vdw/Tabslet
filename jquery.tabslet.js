@@ -1,159 +1,159 @@
 /**
- * Tabs plugin
+ * Tabslet | tabs jQuery plugin
  *
- * @copyright	Copyright 2012, Dimitris Krestos
- * @license		Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
- * @link		http://vdw.staytuned.gr
- * @version		v1.4.2
+ * @copyright Copyright 2012, Dimitris Krestos
+ * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
+ * @link      http://vdw.staytuned.gr
+ * @version   v1.4.2
  */
 
-	/* Sample html structure
+  /* Sample html structure
 
-	<div class='tabs'>
-		<ul class='horizontal'>
-			<li><a href="#tab-1">Tab 1</a></li>
-			<li><a href="#tab-2">Tab 2</a></li>
-			<li><a href="#tab-3">Tab 3</a></li>
-		</ul>
-		<div id='tab-1'></div>
-		<div id='tab-2'></div>
-		<div id='tab-3'></div>
-	</div>
+  <div class='tabs'>
+    <ul class='horizontal'>
+      <li><a href="#tab-1">Tab 1</a></li>
+      <li><a href="#tab-2">Tab 2</a></li>
+      <li><a href="#tab-3">Tab 3</a></li>
+    </ul>
+    <div id='tab-1'></div>
+    <div id='tab-2'></div>
+    <div id='tab-3'></div>
+  </div>
 
-	*/
+  */
 
 ;(function($, window, undefined) {
-	"use strict";
+  "use strict";
 
-	$.fn.tabslet = function(options) {
+  $.fn.tabslet = function(options) {
 
-		var defaults = {
-			mouseevent:   'click',
-			attribute:    'href',
-			animation:    false,
-			autorotate:   false,
-			pauseonhover: true,
-			delay:        2000,
-			active:       1,
-			controls:     {
-				prev: '.prev',
-				next: '.next'
-			}
-		};
+    var defaults = {
+      mouseevent:   'click',
+      attribute:    'href',
+      animation:    false,
+      autorotate:   false,
+      pauseonhover: true,
+      delay:        2000,
+      active:       1,
+      controls:     {
+        prev: '.prev',
+        next: '.next'
+      }
+    };
 
-		var options = $.extend(defaults, options);
+    var options = $.extend(defaults, options);
 
-		return this.each(function() {
+    return this.each(function() {
 
-			var $this = $(this);
+      var $this = $(this);
 
-			if ( !$this.data( 'tabslet-init' ) ) {
+      if ( !$this.data( 'tabslet-init' ) ) {
 
-				$this.data( 'tabslet-init', true );
+        $this.data( 'tabslet-init', true );
 
-				// Ungly overwrite
-				options.mouseevent    = $this.data('mouseevent') || options.mouseevent;
-				options.attribute     = $this.data('attribute') || options.attribute;
-				options.animation     = $this.data('animation') || options.animation;
-				options.autorotate    = $this.data('autorotate') || options.autorotate;
-				options.pauseonhover 	= $this.data('pauseonhover') || options.pauseonhover;
-				options.delay 				= $this.data('delay') || options.delay;
-				options.active 				= $this.data('active') || options.active;
+        // Ungly overwrite
+        options.mouseevent    = $this.data('mouseevent') || options.mouseevent;
+        options.attribute     = $this.data('attribute') || options.attribute;
+        options.animation     = $this.data('animation') || options.animation;
+        options.autorotate    = $this.data('autorotate') || options.autorotate;
+        options.pauseonhover  = $this.data('pauseonhover') || options.pauseonhover;
+        options.delay         = $this.data('delay') || options.delay;
+        options.active        = $this.data('active') || options.active;
 
-				$this.find('> div').hide();
-				$this.find('> div').eq(options.active - 1).show();
-				$this.find('> ul li').eq(options.active - 1).addClass('active');
+        $this.find('> div').hide();
+        $this.find('> div').eq(options.active - 1).show();
+        $this.find('> ul li').eq(options.active - 1).addClass('active');
 
-				var fn = eval(
+        var fn = eval(
 
-					function() {
+          function() {
 
-						$(this).trigger('_before');
+            $(this).trigger('_before');
 
-						$this.find('> ul li').removeClass('active');
-						$(this).addClass('active');
-						$this.find('> div').hide();
+            $this.find('> ul li').removeClass('active');
+            $(this).addClass('active');
+            $this.find('> div').hide();
 
-						var currentTab = $(this).find('a').attr(options.attribute);
+            var currentTab = $(this).find('a').attr(options.attribute);
 
-						if (options.animation) {
+            if (options.animation) {
 
-							$this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
-								$(this).trigger('_after');
-							});
+              $this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
+                $(this).trigger('_after');
+              });
 
-						} else {
+            } else {
 
-							$this.find(currentTab).show();
-							$(this).trigger('_after');
+              $this.find(currentTab).show();
+              $(this).trigger('_after');
 
-						}
+            }
 
-						return false;
+            return false;
 
-					}
+          }
 
-				);
+        );
 
-				var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)");
+        var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)");
 
-				init;
+        init;
 
-				// Autorotate
-				var elements = $this.find('> ul li'), i = options.active - 1; // ungly
+        // Autorotate
+        var elements = $this.find('> ul li'), i = options.active - 1; // ungly
 
-				var forward = function() {
+        var forward = function() {
 
-					i = ++i % elements.length; // wrap around
+          i = ++i % elements.length; // wrap around
 
-					options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
+          options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
 
-					var t = setTimeout(forward, options.delay);
+          var t = setTimeout(forward, options.delay);
 
-					$this.mouseover(function () {
+          $this.mouseover(function () {
 
-						if (options.pauseonhover) clearTimeout(t);
+            if (options.pauseonhover) clearTimeout(t);
 
-					});
+          });
 
-				}
+        }
 
-				if (options.autorotate) {
+        if (options.autorotate) {
 
-					setTimeout(forward, 0);
+          setTimeout(forward, 0);
 
-					if (options.pauseonhover) $this.on( "mouseleave", function() { setTimeout(forward, 1000); });
+          if (options.pauseonhover) $this.on( "mouseleave", function() { setTimeout(forward, 1000); });
 
-				}
+        }
 
-				var move = function(direction) {
+        var move = function(direction) {
 
-					if (direction == 'forward') i = ++i % elements.length; // wrap around
+          if (direction == 'forward') i = ++i % elements.length; // wrap around
 
-					if (direction == 'backward') i = --i % elements.length; // wrap around
+          if (direction == 'backward') i = --i % elements.length; // wrap around
 
-					elements.eq(i).click();
+          elements.eq(i).click();
 
-				}
+        }
 
-				$this.find(options.controls.next).click(function() {
-					move('forward');
-				});
+        $this.find(options.controls.next).click(function() {
+          move('forward');
+        });
 
-				$this.find(options.controls.prev).click(function() {
-					move('backward');
-				});
+        $this.find(options.controls.prev).click(function() {
+          move('backward');
+        });
 
-				$this.on ('destroy', function() {
-					$(this).removeData();
-				});
+        $this.on ('destroy', function() {
+          $(this).removeData();
+        });
 
-			}
+      }
 
-		});
+    });
 
-	};
+  };
 
-	$(document).ready(function () { $('[data-toggle="tabslet"]').tabslet(); });
+  $(document).ready(function () { $('[data-toggle="tabslet"]').tabslet(); });
 
 })(jQuery);
