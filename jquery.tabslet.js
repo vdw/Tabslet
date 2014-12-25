@@ -47,6 +47,9 @@
 
       var $this = $(this);
 
+      // Autorotate
+      var elements = $this.find('> ul li'), i = options.active - 1; // ungly
+
       if ( !$this.data( 'tabslet-init' ) ) {
 
         $this.data( 'tabslet-init', true );
@@ -74,6 +77,8 @@
             $(this).addClass('active');
             $this.find('> div').hide();
 
+            i = elements.index($(this));
+
             var currentTab = $(this).find('a').attr(options.attribute);
 
             if (options.animation) {
@@ -98,9 +103,6 @@
         var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)");
 
         init;
-
-        // Autorotate
-        var elements = $this.find('> ul li'), i = options.active - 1; // ungly
 
         var forward = function() {
 
