@@ -1,6 +1,7 @@
 # Tabslet
 
 [![npm version](https://badge.fury.io/js/tabslet.png)](http://badge.fury.io/js/tabslet)
+[![Bower version](https://badge.fury.io/bo/Tabslet.png)](http://badge.fury.io/bo/Tabslet)
 
 Yet another jQuery plugin for tabs, lightweight, easy to use and with some extra features
 
