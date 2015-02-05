@@ -1,5 +1,7 @@
 # Tabslet
 
+[![npm version](https://badge.fury.io/js/tabslet.png)](http://badge.fury.io/js/tabslet)
+
 Yet another jQuery plugin for tabs, lightweight, easy to use and with some extra features
 
 * [Demonstration page][1]
