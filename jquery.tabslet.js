@@ -132,7 +132,7 @@
 
           setTimeout(forward, options.delay);
 
-          if (options.pauseonhover) $this.on( "mouseleave", function() { t = setTimeout(forward, options.delay); });
+          if (options.pauseonhover) $this.on( "mouseleave", function() { clearTimeout(t); t = setTimeout(forward, options.delay); });
 
         }
 
