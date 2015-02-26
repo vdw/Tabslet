@@ -104,27 +104,35 @@
 
         init;
 
+        var t;
+
         var forward = function() {
 
           i = ++i % elements.length; // wrap around
 
           options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
 
-          var t = setTimeout(forward, options.delay);
+          if (options.autorotate) {
 
-          $this.mouseover(function () {
+            clearTimeout(t);
 
-            if (options.pauseonhover) clearTimeout(t);
+            t = setTimeout(forward, options.delay);
 
-          });
+            $this.mouseover(function () {
+
+              if (options.pauseonhover) clearTimeout(t);
+
+            });
+
+          }
 
         }
 
         if (options.autorotate) {
 
-          setTimeout(forward, 0);
+          setTimeout(forward, options.delay);
 
-          if (options.pauseonhover) $this.on( "mouseleave", function() { setTimeout(forward, 1000); });
+          if (options.pauseonhover) $this.on( "mouseleave", function() { t = setTimeout(forward, options.delay); });
 
         }
 
