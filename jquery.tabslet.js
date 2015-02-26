@@ -4,7 +4,7 @@
  * @copyright Copyright 2012, Dimitris Krestos
  * @license   Apache License, Version 2.0 (http://www.opensource.org/licenses/apache2.0.php)
  * @link      http://vdw.staytuned.gr
- * @version   v1.4.4
+ * @version   v1.4.5
  */
 
   /* Sample html structure
