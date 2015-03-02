@@ -130,7 +130,17 @@
 
         if (options.autorotate) {
 
-          setTimeout(forward, options.delay);
+          t = setTimeout(forward, options.delay);
+
+          $this.hover(function() {
+
+            if (options.pauseonhover) clearTimeout(t);
+
+          }, function() {
+
+            t = setTimeout(forward, options.delay);
+
+          });
 
           if (options.pauseonhover) $this.on( "mouseleave", function() { clearTimeout(t); t = setTimeout(forward, options.delay); });
 
