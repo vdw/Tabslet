@@ -64,8 +64,10 @@
         options.active        = $this.data('active') || options.active;
 
         $this.find('> div').hide();
-        $this.find('> div').eq(options.active - 1).show();
-        $this.find('> ul li').eq(options.active - 1).addClass('active');
+        if ( options.active ) {
+          $this.find('> div').eq(options.active - 1).show();
+          $this.find('> ul li').eq(options.active - 1).addClass('active');
+        }
 
         var fn = eval(
 
