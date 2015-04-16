@@ -33,7 +33,7 @@ No additional dependencies are required.
 
 ## Copyright and license
 
-Copyright 2012 Dimitris Krestos
+Copyright 2015 Dimitris Krestos
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
