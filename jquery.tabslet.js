@@ -45,7 +45,11 @@
 
     return this.each(function() {
 
-      var $this = $(this);
+      var $this = $(this), _cache_li = [], _cache_div = [];
+
+      // Caching
+      $this.find('> ul li').each(function() { _cache_li.push($(this).attr('class')); });
+      $this.find('> div').each(function() { _cache_div.push($(this).attr('style')); });
 
       // Autorotate
       var elements = $this.find('> ul li'), i = options.active - 1; // ungly
@@ -167,7 +171,15 @@
         });
 
         $this.on ('destroy', function() {
-          $(this).removeData();
+          $(this)
+            .removeData()
+            .find('> ul li').each( function(i) {
+              if ( _cache_li[i] !== undefined ) { $(this).removeAttr('class').addClass(_cache_li[i]); }
+            });
+          $(this)
+            .find('> div').each( function(i) {
+              if ( _cache_div[i] !== undefined ) { $(this).removeAttr('style').css( _cache_div[i].split(': ')[0], _cache_div[i].split(': ')[1] ); }
+            });
         });
 
       }
