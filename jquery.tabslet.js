@@ -48,8 +48,7 @@
       var $this = $(this), _cache_li = [], _cache_div = [];
 
       // Caching
-      $this.find('> ul li').each(function() { _cache_li.push($(this).attr('class')); });
-      $this.find('> div').each(function() { _cache_div.push($(this).attr('style')); });
+      $this.find('> div').each(function() { _cache_div.push($(this).css('display')); });
 
       // Autorotate
       var elements = $this.find('> ul li'), i = options.active - 1; // ungly
@@ -174,11 +173,11 @@
           $(this)
             .removeData()
             .find('> ul li').each( function(i) {
-              if ( _cache_li[i] !== undefined ) { $(this).removeAttr('class').addClass(_cache_li[i]); }
+              $(this).removeClass('active');
             });
           $(this)
             .find('> div').each( function(i) {
-              if ( _cache_div[i] !== undefined ) { $(this).removeAttr('style').css( _cache_div[i].split(': ')[0], _cache_div[i].split(': ')[1] ); }
+              $(this).removeAttr('style').css( 'display', _cache_div[i] );
             });
         });
 
