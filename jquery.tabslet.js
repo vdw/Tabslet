@@ -20,6 +20,21 @@
     <div id='tab-3'></div>
   </div>
 
+  OR
+
+  <div class='tabs'>
+    <ul class='horizontal'>
+      <li><a href="#tab-1">Tab 1</a></li>
+      <li><a href="#tab-2">Tab 2</a></li>
+      <li><a href="#tab-3">Tab 3</a></li>
+    </ul>
+  </div>
+  <div id='tabs_container'>
+    <div id='tab-1'></div>
+    <div id='tab-2'></div>
+    <div id='tab-3'></div>
+  </div>
+
   */
 
 ;(function($, window, undefined) {
@@ -35,6 +50,7 @@
       pauseonhover: true,
       delay:        2000,
       active:       1,
+      container:    false,
       controls:     {
         prev: '.prev',
         next: '.next'
@@ -45,10 +61,12 @@
 
     return this.each(function() {
 
-      var $this = $(this), _cache_li = [], _cache_div = [];
+      var $this      = $(this), _cache_li = [], _cache_div = [];
+      var _container = options.container ? $(options.container) : $this;
+      var _tabs      = _container.find('> div');
 
       // Caching
-      $this.find('> div').each(function() { _cache_div.push($(this).css('display')); });
+      _tabs.each(function() { _cache_div.push($(this).css('display')); });
 
       // Autorotate
       var elements = $this.find('> ul li'), i = options.active - 1; // ungly
@@ -58,17 +76,18 @@
         $this.data( 'tabslet-init', true );
 
         // Ungly overwrite
-        options.mouseevent    = $this.data('mouseevent') || options.mouseevent;
-        options.attribute     = $this.data('attribute') || options.attribute;
-        options.animation     = $this.data('animation') || options.animation;
-        options.autorotate    = $this.data('autorotate') || options.autorotate;
-        options.pauseonhover  = $this.data('pauseonhover') || options.pauseonhover;
-        options.delay         = $this.data('delay') || options.delay;
-        options.active        = $this.data('active') || options.active;
+        options.mouseevent   = $this.data('mouseevent') || options.mouseevent;
+        options.attribute    = $this.data('attribute') || options.attribute;
+        options.animation    = $this.data('animation') || options.animation;
+        options.autorotate   = $this.data('autorotate') || options.autorotate;
+        options.pauseonhover = $this.data('pauseonhover') || options.pauseonhover;
+        options.delay        = $this.data('delay') || options.delay;
+        options.active       = $this.data('active') || options.active;
+        options.container    = $this.data('container') || options.container;
 
-        $this.find('> div').hide();
+        _tabs.hide();
         if ( options.active ) {
-          $this.find('> div').eq(options.active - 1).show();
+          _tabs.eq(options.active - 1).show();
           $this.find('> ul li').eq(options.active - 1).addClass('active');
         }
 
@@ -80,7 +99,7 @@
 
             $this.find('> ul li').removeClass('active');
             $(this).addClass('active');
-            $this.find('> div').hide();
+            _tabs.hide();
 
             i = elements.index($(this));
 
@@ -88,13 +107,13 @@
 
             if (options.animation) {
 
-              $this.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
+              _container.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
                 $(this).trigger('_after');
               });
 
             } else {
 
-              $this.find(currentTab).show();
+              _container.find(currentTab).show();
               $(this).trigger('_after');
 
             }
@@ -175,8 +194,7 @@
             .find('> ul li').each( function(i) {
               $(this).removeClass('active');
             });
-          $(this)
-            .find('> div').each( function(i) {
+          _tabs.each( function(i) {
               $(this).removeAttr('style').css( 'display', _cache_div[i] );
             });
         });
