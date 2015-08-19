@@ -31,7 +31,7 @@ No additional dependencies are required.
 
 ## Questions/Answers and Enhancements
 
-Do you have a question? First take a look [here][6].
+Do you have any questions? First, take a look [here][6].
 
 Or if you are looking for enhancements, [here][7].
 
