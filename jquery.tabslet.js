@@ -47,6 +47,7 @@
       attribute:    'href',
       animation:    false,
       autorotate:   false,
+      deeplinking:  false,
       pauseonhover: true,
       delay:        2000,
       active:       1,
@@ -80,9 +81,10 @@
         options.attribute    = $this.data('attribute') || options.attribute;
         options.animation    = $this.data('animation') || options.animation;
         options.autorotate   = $this.data('autorotate') || options.autorotate;
+        options.deeplinking  = $this.data('deeplinking') || options.deeplinking;
         options.pauseonhover = $this.data('pauseonhover') || options.pauseonhover;
         options.delay        = $this.data('delay') || options.delay;
-        options.active       = $this.data('active') || options.active;
+        options.active       = options.deeplinking ? deep_link() : ( $this.data('active') || options.active )
         options.container    = $this.data('container') || options.container;
 
         _tabs.hide();
@@ -167,6 +169,26 @@
           });
 
           if (options.pauseonhover) $this.on( "mouseleave", function() { clearTimeout(t); t = setTimeout(forward, options.delay); });
+
+        }
+
+        function deep_link() {
+
+          var ids = [];
+
+          elements.find('a').each(function() { ids.push($(this).attr(options.attribute)); });
+
+          var index = $.inArray(location.hash, ids)
+
+          if (index > -1) {
+
+            return index + 1
+
+          } else {
+
+            return ($this.data('active') || options.active)
+
+          }
 
         }
 
