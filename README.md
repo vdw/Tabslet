@@ -17,6 +17,7 @@ Beyond the standard tabs functionality:
 * Data attribute initialization and configuration
 * Controls (next, previous)
 * Rotation (usefull for banner rotators/carousels)
+* Deep linking support
 * Change tabs on mouse over
 * Use animation effect for tabs' changing
 * Ability to use either _href_ or _alt_ attribute to target tab
