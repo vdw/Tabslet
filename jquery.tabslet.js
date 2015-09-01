@@ -90,7 +90,7 @@
         _tabs.hide();
         if ( options.active ) {
           _tabs.eq(options.active - 1).show();
-          $this.find('> ul li').eq(options.active - 1).addClass('active');
+          elements.eq(options.active - 1).addClass('active');
         }
 
         var fn = eval(
@@ -99,7 +99,7 @@
 
             $(this).trigger('_before');
 
-            $this.find('> ul li').removeClass('active');
+            elements.removeClass('active');
             $(this).addClass('active');
             _tabs.hide();
 
@@ -126,7 +126,7 @@
 
         );
 
-        var init = eval("$this.find('> ul li')." + options.mouseevent + "(fn)");
+        var init = eval("elements." + options.mouseevent + "(fn)");
 
         init;
 
