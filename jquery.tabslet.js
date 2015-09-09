@@ -107,6 +107,8 @@
 
             var currentTab = $(this).find('a').attr(options.attribute);
 
+            if (options.deeplinking) location.hash = currentTab;
+
             if (options.animation) {
 
               _container.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
