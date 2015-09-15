@@ -76,21 +76,19 @@
 
         $this.data( 'tabslet-init', true );
 
-        // Ungly overwrite
-        options.mouseevent   = $this.data('mouseevent') || options.mouseevent;
-        options.attribute    = $this.data('attribute') || options.attribute;
-        options.animation    = $this.data('animation') || options.animation;
-        options.autorotate   = $this.data('autorotate') || options.autorotate;
-        options.deeplinking  = $this.data('deeplinking') || options.deeplinking;
-        options.pauseonhover = $this.data('pauseonhover') || options.pauseonhover;
-        options.delay        = $this.data('delay') || options.delay;
-        options.active       = options.deeplinking ? deep_link() : ( $this.data('active') || options.active )
-        options.container    = $this.data('container') || options.container;
+        $this.opts = [];
+
+        $.map( ['mouseevent', 'attribute', 'animation', 'autorotate', 'deeplinking', 'deeplinking', 'pauseonhover', 'delay', 'container'], function( val, i ) {
+          $this.opts[val] = $this.data(val) || options[val];
+        });
+
+        $this.opts['active'] = $this.opts.deeplinking ? deep_link() : ( $this.data('active') || options.active )
 
         _tabs.hide();
-        if ( options.active ) {
-          _tabs.eq(options.active - 1).show();
-          elements.eq(options.active - 1).addClass('active');
+
+        if ( $this.opts.active ) {
+          _tabs.eq($this.opts.active - 1).show();
+          elements.eq($this.opts.active - 1).addClass('active');
         }
 
         var fn = eval(
@@ -105,11 +103,11 @@
 
             i = elements.index($(this));
 
-            var currentTab = $(this).find('a').attr(options.attribute);
+            var currentTab = $(this).find('a').attr($this.opts.attribute);
 
-            if (options.deeplinking) location.hash = currentTab;
+            if ($this.opts.deeplinking) location.hash = currentTab;
 
-            if (options.animation) {
+            if ($this.opts.animation) {
 
               _container.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
                 $(this).trigger('_after');
@@ -128,7 +126,7 @@
 
         );
 
-        var init = eval("elements." + options.mouseevent + "(fn)");
+        var init = eval("elements." + $this.opts.mouseevent + "(fn)");
 
         init;
 
@@ -138,17 +136,17 @@
 
           i = ++i % elements.length; // wrap around
 
-          options.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
+          $this.opts.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
 
-          if (options.autorotate) {
+          if ($this.opts.autorotate) {
 
             clearTimeout(t);
 
-            t = setTimeout(forward, options.delay);
+            t = setTimeout(forward, $this.opts.delay);
 
             $this.mouseover(function () {
 
-              if (options.pauseonhover) clearTimeout(t);
+              if ($this.opts.pauseonhover) clearTimeout(t);
 
             });
 
@@ -156,21 +154,21 @@
 
         }
 
-        if (options.autorotate) {
+        if ($this.opts.autorotate) {
 
-          t = setTimeout(forward, options.delay);
+          t = setTimeout(forward, $this.opts.delay);
 
           $this.hover(function() {
 
-            if (options.pauseonhover) clearTimeout(t);
+            if ($this.opts.pauseonhover) clearTimeout(t);
 
           }, function() {
 
-            t = setTimeout(forward, options.delay);
+            t = setTimeout(forward, $this.opts.delay);
 
           });
 
-          if (options.pauseonhover) $this.on( "mouseleave", function() { clearTimeout(t); t = setTimeout(forward, options.delay); });
+          if ($this.opts.pauseonhover) $this.on( "mouseleave", function() { clearTimeout(t); t = setTimeout(forward, $this.opts.delay); });
 
         }
 
@@ -178,7 +176,7 @@
 
           var ids = [];
 
-          elements.find('a').each(function() { ids.push($(this).attr(options.attribute)); });
+          elements.find('a').each(function() { ids.push($(this).attr($this.opts.attribute)); });
 
           var index = $.inArray(location.hash, ids)
 
