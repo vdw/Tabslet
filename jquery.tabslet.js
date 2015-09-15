@@ -210,6 +210,14 @@
           move('backward');
         });
 
+        $this.on ('next', function() {
+          move('forward');
+        });
+
+        $this.on ('prev', function() {
+          move('backward');
+        });
+
         $this.on ('destroy', function() {
           $(this)
             .removeData()
