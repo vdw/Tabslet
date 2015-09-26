@@ -93,30 +93,31 @@
 
         var fn = eval(
 
-          function() {
+          function(e, tab) {
+            var _this = tab ? elements.find('a[' + $this.opts.attribute + '=' + tab +']').parent() : $(this);
 
-            $(this).trigger('_before');
+            _this.trigger('_before');
 
             elements.removeClass('active');
-            $(this).addClass('active');
+            _this.addClass('active');
             _tabs.hide();
 
-            i = elements.index($(this));
+            i = elements.index(_this);
 
-            var currentTab = $(this).find('a').attr($this.opts.attribute);
+            var currentTab = tab || _this.find('a').attr($this.opts.attribute);
 
             if ($this.opts.deeplinking) location.hash = currentTab;
 
             if ($this.opts.animation) {
 
               _container.find(currentTab).animate( { opacity: 'show' }, 'slow', function() {
-                $(this).trigger('_after');
+                _this.trigger('_after');
               });
 
             } else {
 
               _container.find(currentTab).show();
-              $(this).trigger('_after');
+              _this.trigger('_after');
 
             }
 
@@ -210,6 +211,10 @@
           move('backward');
         });
 
+        $this.on ('show', function(e, tab) {
+          fn(e, tab);
+        });
+
         $this.on ('next', function() {
           move('forward');
         });
@@ -225,8 +230,8 @@
               $(this).removeClass('active');
             });
           _tabs.each( function(i) {
-              $(this).removeAttr('style').css( 'display', _cache_div[i] );
-            });
+            $(this).removeAttr('style').css( 'display', _cache_div[i] );
+          });
         });
 
       }
