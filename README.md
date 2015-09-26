@@ -21,7 +21,7 @@ Beyond the standard tabs functionality:
 * Change tabs on mouse over
 * Use animation effect for tabs' changing
 * Ability to use either _href_ or _alt_ attribute to target tab
-* Destroy method
+* Destroy and control (next, prev, show) methods
 
 ## Compatibility/Dependencies
 
