@@ -38,7 +38,7 @@ Or if you are looking for enhancements, [here][7].
 
 ## Credits
 * [Stevy.gr][4]
-* [Prince.gr][5]
+* [PVgr][5]
 
 ## Copyright and license
 
@@ -60,6 +60,6 @@ limitations under the License.
   [2]: http://www.apache.org/licenses/LICENSE-2.0
   [3]: https://github.com/vdw/Tabslet/wiki
   [4]: http://stevy.gr/
-  [5]: http://prince.gr/
+  [5]: http://www.pvgr.eu/en/
   [6]: https://github.com/vdw/Tabslet/issues?utf8=%E2%9C%93&q=label%3Aquestion
   [7]: https://github.com/vdw/Tabslet/issues?utf8=%E2%9C%93&q=label%3Aenhancement
