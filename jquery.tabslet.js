@@ -78,7 +78,7 @@
 
         $this.opts = [];
 
-        $.map( ['mouseevent', 'attribute', 'animation', 'autorotate', 'deeplinking', 'deeplinking', 'pauseonhover', 'delay', 'container'], function( val, i ) {
+        $.map( ['mouseevent', 'attribute', 'animation', 'autorotate', 'deeplinking', 'pauseonhover', 'delay', 'container'], function( val, i ) {
           $this.opts[val] = $this.data(val) || options[val];
         });
 
