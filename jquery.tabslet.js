@@ -70,7 +70,7 @@
       _tabs.each(function() { _cache_div.push($(this).css('display')); });
 
       // Autorotate
-      var elements = $this.find('> ul li'), i = options.active - 1; // ungly
+      var elements = $this.find('> ul > li'), i = options.active - 1; // ungly
 
       if ( !$this.data( 'tabslet-init' ) ) {
 
