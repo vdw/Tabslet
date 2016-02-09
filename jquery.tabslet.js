@@ -173,7 +173,7 @@
 
         }
 
-        var deep_link = function() {
+        function deep_link() {
 
           var ids = [];
 
