@@ -8,6 +8,12 @@ Yet another jQuery plugin for tabs, lightweight, easy to use and with some extra
 * [Demonstration page][1]
 * [Documentation (wiki)][3]
 
+## Usage 
+
+<code>
+bower install Tabslet
+</code>
+
 ## Features
 
 Beyond the standard tabs functionality:
