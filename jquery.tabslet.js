@@ -48,6 +48,8 @@
       animation:    false,
       autorotate:   false,
       deeplinking:  false,
+      tabSelector: '> ul > li',
+      contentSelector: '> div',
       pauseonhover: true,
       delay:        2000,
       active:       1,
@@ -64,13 +66,13 @@
 
       var $this      = $(this), _cache_li = [], _cache_div = [];
       var _container = options.container ? $(options.container) : $this;
-      var _tabs      = _container.find('> div');
+      var _tabs      = _container.find(options.contentSelector);
 
       // Caching
       _tabs.each(function() { _cache_div.push($(this).css('display')); });
 
       // Autorotate
-      var elements = $this.find('> ul > li'), i = options.active - 1; // ungly
+      var elements = $this.find(options.tabSelector), i = options.active - 1;
 
       if ( !$this.data( 'tabslet-init' ) ) {
 
@@ -226,7 +228,7 @@
         $this.on ('destroy', function() {
           $(this)
             .removeData()
-            .find('> ul li').each( function(i) {
+            .find(options.tabSelector).each( function(i) {
               $(this).removeClass('active');
             });
           _tabs.each( function(i) {
