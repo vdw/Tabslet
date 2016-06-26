@@ -44,6 +44,7 @@
 
     var defaults = {
       mouseevent:   'click',
+      activeclass:    'active',
       attribute:    'href',
       animation:    false,
       autorotate:   false,
@@ -78,7 +79,7 @@
 
         $this.opts = [];
 
-        $.map( ['mouseevent', 'attribute', 'animation', 'autorotate', 'deeplinking', 'pauseonhover', 'delay', 'container'], function( val, i ) {
+        $.map( ['mouseevent', 'activeclass', 'attribute', 'animation', 'autorotate', 'deeplinking', 'pauseonhover', 'delay', 'container'], function( val, i ) {
           $this.opts[val] = $this.data(val) || options[val];
         });
 
@@ -88,7 +89,7 @@
 
         if ( $this.opts.active ) {
           _tabs.eq($this.opts.active - 1).show();
-          elements.eq($this.opts.active - 1).addClass('active');
+          elements.eq($this.opts.active - 1).addClass(options.activeclass);
         }
 
         var fn = eval(
@@ -98,8 +99,8 @@
 
             _this.trigger('_before');
 
-            elements.removeClass('active');
-            _this.addClass('active');
+            elements.removeClass(options.activeclass);
+            _this.addClass(options.activeclass);
             _tabs.hide();
 
             i = elements.index(_this);
@@ -227,7 +228,7 @@
           $(this)
             .removeData()
             .find('> ul li').each( function(i) {
-              $(this).removeClass('active');
+              $(this).removeClass(options.activeclass);
             });
           _tabs.each( function(i) {
             $(this).removeAttr('style').css( 'display', _cache_div[i] );
