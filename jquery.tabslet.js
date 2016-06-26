@@ -44,7 +44,7 @@
 
     var defaults = {
       mouseevent:   'click',
-      activeclass:    'active',
+      activeclass:  'active',
       attribute:    'href',
       animation:    false,
       autorotate:   false,
