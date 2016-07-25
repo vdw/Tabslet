@@ -95,7 +95,7 @@
         var fn = eval(
 
           function(e, tab) {
-            var _this = tab ? elements.find('a[' + $this.opts.attribute + '=' + tab +']').parent() : $(this);
+            var _this = tab ? elements.find('a[' + $this.opts.attribute + '="' + tab +'"]').parent() : $(this);
 
             _this.trigger('_before');
 
