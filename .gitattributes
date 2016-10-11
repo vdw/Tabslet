@@ -1,2 +1,4 @@
 demo/* linguist-vendored
+test/* linguist-vendored
 jquery.tabslet.min.js linguist-vendored=false
+jquery.tabslet.test.js linguist-vendored=false
