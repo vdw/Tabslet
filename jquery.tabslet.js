@@ -204,12 +204,14 @@
 
         }
 
-        $this.find(options.controls.next).click(function() {
+        $this.find(options.controls.next).click(function(e) {
           move('forward');
+          e.preventDefault();
         });
 
-        $this.find(options.controls.prev).click(function() {
+        $this.find(options.controls.prev).click(function(e) {
           move('backward');
+          e.preventDefault();
         });
 
         $this.on ('show', function(e, tab) {
