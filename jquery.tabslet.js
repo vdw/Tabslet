@@ -128,9 +128,11 @@
 
         );
 
-        var init = eval("elements." + $this.opts.mouseevent + "(fn)");
+        var init = function() {
+          eval("elements." + $this.opts.mouseevent + "(fn)");
+        };
 
-        init;
+        init();
 
         var t;
 
@@ -154,7 +156,7 @@
 
           }
 
-        }
+        };
 
         if ($this.opts.autorotate) {
 
@@ -202,7 +204,7 @@
 
           elements.eq(i).click();
 
-        }
+        };
 
         $this.find(options.controls.next).click(function() {
           move('forward');
@@ -234,9 +236,7 @@
             $(this).removeAttr('style').css( 'display', _cache_div[i] );
           });
         });
-
       }
-
     });
 
   };
