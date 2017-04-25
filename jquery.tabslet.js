@@ -59,7 +59,7 @@
       }
     };
 
-    var options = $.extend(defaults, options);
+    options = $.extend(defaults, options);
 
     return this.each(function() {
 
@@ -128,9 +128,11 @@
 
         );
 
-        var init = eval("elements." + $this.opts.mouseevent + "(fn)");
+        var init = function() {
+          eval("elements." + $this.opts.mouseevent + "(fn)");
+        };
 
-        init;
+        init();
 
         var t;
 
@@ -138,7 +140,7 @@
 
           i = ++i % elements.length; // wrap around
 
-          $this.opts.mouseevent == 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
+          $this.opts.mouseevent === 'hover' ? elements.eq(i).trigger('mouseover') : elements.eq(i).click();
 
           if ($this.opts.autorotate) {
 
@@ -154,7 +156,7 @@
 
           }
 
-        }
+        };
 
         if ($this.opts.autorotate) {
 
@@ -196,13 +198,13 @@
 
         var move = function(direction) {
 
-          if (direction == 'forward') i = ++i % elements.length; // wrap around
+          if (direction === 'forward') i = ++i % elements.length; // wrap around
 
-          if (direction == 'backward') i = --i % elements.length; // wrap around
+          if (direction === 'backward') i = --i % elements.length; // wrap around
 
           elements.eq(i).click();
 
-        }
+        };
 
         $this.find(options.controls.next).click(function() {
           move('forward');
@@ -234,9 +236,7 @@
             $(this).removeAttr('style').css( 'display', _cache_div[i] );
           });
         });
-
       }
-
     });
 
   };
