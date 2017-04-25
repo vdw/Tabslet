@@ -59,7 +59,7 @@
       }
     };
 
-    var options = $.extend(defaults, options);
+    options = $.extend(defaults, options);
 
     return this.each(function() {
 
